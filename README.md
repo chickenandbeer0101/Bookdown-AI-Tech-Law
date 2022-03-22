@@ -1,7 +1,3 @@
-
-
-
-
 ### Render the book
 
 - [ ] 1. Install **bookdown** with `install.packages("bookdown")`. If you already have it, update to the [latest version](https://CRAN.R-project.org/package=bookdown).
