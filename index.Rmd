@@ -1,5 +1,5 @@
 --- 
-title: "Regulatory Situation for Swiss fintech startups"
+title: "Regulatory Situation For Swiss Fintech Startups"
 author: "Philipp Pag"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
