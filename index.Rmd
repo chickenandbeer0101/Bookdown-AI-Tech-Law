@@ -1,6 +1,6 @@
 --- 
 title: "Regulatory Situation For Swiss Fintech Startups"
-author: "Philipp Pag"
+author: "Line Hasler, Jessica Rye, Yaejin Kim, Philipp Pag"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
