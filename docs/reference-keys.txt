@@ -1,7 +1,7 @@
 abstract
+fintech-reguations
+robo-advisors
 introduction
-robo-advisors-a-fintech-case-study
-introduction-1
 ai-driven-client-onboarding-process
 pseudocode-of-the-questionnaire-and-the-respectice-scoring
 pseudocode-of-point-scoring-of-the-questionnaire
