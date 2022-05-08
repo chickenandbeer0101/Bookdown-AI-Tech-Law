@@ -1,9 +1,93 @@
 # Chapter 3: Robo-Advisors, a Fintech Case Study
 
 ## Introduction
+Consumers and investors are benefiting from both the emergence of new fintech solutions and the further development of existing financial service providers. This has led to a wider range of financial products and services being offered more efficiently and effectively, and companies are under competitive pressure to become more consumer-centric. However, the increasing use of fintech solutions and new technologies also entails risks to which regulators and supervisory authorities are reacting. In this chapter, we aim to analyse the consequences of regulations for startups, whether they are justified, whether they really achieve the desired effect, and ultimately what impact they have on the economy as a whole. To this end, we conducted several interviews with CEOs of fintech companies in Switzerland to get first-hand opinions from those most directly affected by new regulations. Chapter 2 is thus divided into the following subchapters. First, using the example of the adoption of the Financial Services Law (FinSA), which was introduced in 2018 and came into force on January 1, 2020, we analyse the immediate consequences for startups resulting from the implementation of the new regulations. In a second step, which we will later refer to as "Voices from the Industry," we ask industry professionals what they personally think of new regulations. Specifically, we asked Dr. Adriano Lucatelli, CEO and Co-Founder of Descartes Finance AG and Julian Liniger, CEO and Co-Founder of Relai AG. Rino Borini …
 
-## AI-driven client onboarding process
+### AI-driven client onboarding process
 
+#### Pseudocode of the questionnaire and the respectice scoring
+```{python eval=FALSE}
+# Questions
+class RiskProfile(FlaskForm):
+    
+    q1 = RadioField("1. What is your current age?", 
+    choices = [
+      ('0', 'More than 60'),
+      ('2', 'Between 51 and 60'), 
+      ('5', 'Between 41 and 50'), 
+      ('8', 'Between 31 and 40'), 
+      ('10', '30 or younger')])
+    q2 = RadioField("2. What is your investment horizon?", choices = [
+      ('0', 'Within the next year'), 
+      ('2', '2 - 5 years from now'), 
+      ('5', '5 - 10 years from now'), 
+      ('8', '10 - 20 years from now'), 
+      ('10', 'More than 20 years from now')])
+    q3 = RadioField("3. If you were to lose your job today, how long will you be able to maintain your current spending life style before you run out of money in your Savings and Checking account?", 
+    choices = [
+      ('0', '1 week'), 
+      ('2', '1 month'), 
+      ('5', '3 months'), 
+      ('8', '6 months or more'), 
+      ('10', 'I am retired')])
+    q4 = RadioField("4. What is your total annual income? (Work, Pension, Social Security, etc.)", choices = [
+      ('0', 'Less than CHF 50,000'), 
+      ('2', 'CHF 50,000 - CHF 100,000'), 
+      ('5', 'CHF 100,000 - CHF 150,000'), 
+      ('8', 'CHF 150,000 - CHF 250,000'), 
+      ('10', 'More than CHF 250,000')])
+    q5 = RadioField("5. Please rate the stability of your income.", 
+    choices = [
+      ('0', 'Very low'), 
+      ('2', 'Below average'), 
+      ('5', 'Average'), 
+      ('8', 'Above Average'), 
+      ('10', 'Very High')])
+    q6 = RadioField("6. If you unexpectedly received CHF 20,000 to invest today, what would you do?", 
+    choices = [
+      ('0', 'Deposit it in bank account, money market account or an insured cd'), 
+      ('2', 'Invest only in safe quality bonds or bond funds'), 
+      ('5', 'Invest in a proper mix of bonds and stocks'), 
+      ('8', 'Invest only in stocks or stock funds'), 
+      ('10', 'Buy CHF 20,000 worth of lottery tickets')])
+    q7 = RadioField("7. When you think of the word “risk” in a financial context, which of the following words come to mind?", 
+    choices = [
+      ('0', 'Absolute loss'), 
+      ('2', 'Danger'), 
+      ('5', 'Uncertainty'), 
+      ('8', 'Opportunity'), 
+      ('10', 'Thrill')])
+    q8 = RadioField("8. Which of these statements would best describe your attitudes about the next three years performance of this investment?", 
+    choices = [
+      ('0', 'I need to see at least a little return'), 
+      ('2', "I'd have a hard time tolerating any losses"), 
+      ('5', 'I can tolerate a small loss'), 
+      ('8', 'I can tolerate a loss'), 
+      ('10', "I don't mind a loss")])   
+    q8 = RadioField("8. Which of these statements would best describe your attitudes about the next three years performance of this investment?", 
+    choices = [
+      ('0', 'I need to see at least a little return'), 
+      ('2', "I'd have a hard time tolerating any losses"), 
+      ('5', 'I can tolerate a small loss'), 
+      ('8', 'I can tolerate a loss'), 
+      ('10', "I don't mind a loss")])
+    q9 = RadioField("9. Throughout the 17-month bear during the 2009 financial crisis, the SMI lost 50% of its value. Which of the following would you have done if your portfolio experiences a 50% loss?", 
+    choices = [
+      ('0', 'Sell all of your remaining investments and remain in cash'), 
+      ('2', "Move all of your investments into bonds and CDs"), 
+      ('5', 'Change to a more conservative allocation'), 
+      ('8', 'Hold on to your investments'), 
+      ('10', "Invest more")]) 
+    q10 = RadioField("10. How emotionally comfortable are you with volatility?", 
+    choices = [
+      ('0', 'Plan A'), 
+      ('2', "Plan B"), 
+      ('5', 'Plan C'), 
+      ('8', 'Plan D'), 
+      ('10', "Plan E")])
+```
+
+#### Pseudocode of point scoring of the questionnaire
 ```{python eval=FALSE}
 # Traditional Risk Profile 
 def new_risk_profile():
