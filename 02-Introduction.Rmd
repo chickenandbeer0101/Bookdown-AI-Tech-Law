@@ -1,11 +1,16 @@
-# FinTech Reguations
+# Introduction
 
-Text
 
-Footnotes ONLY for **Articles** and **websites** which we cannot add to mendeley.^[Art. 15, FinSA]
+## Citation and Footnotes Check
+We will create footnotes for **Articles** like so.^[Art. 15, FinSA]
+
+The same magic for **Website links**, simply put inside footnote.^[https://www.lombardodier.com/contents/corporate-news/corporate/2021/april/relationship-building-the-signif.html] 
 
 @Ankenbrand2017 is here used as an example citation.
 
 Or use citation at the end of sentence [@Ankenbrand2017].
+
+
+
 
 

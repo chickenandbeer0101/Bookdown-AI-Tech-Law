@@ -3,6 +3,6 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">AI: Tech and Law</a></li>
+        <li><a href="./">Regulations for FinTech's</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>

@@ -1,5 +1,6 @@
 abstract
-fintech-reguations
+introduction
+citation-and-footnotes-check
 robo-advisors
 ai-driven-process
 pseudocode-of-the-questionnaire-and-the-respectice-scoring
