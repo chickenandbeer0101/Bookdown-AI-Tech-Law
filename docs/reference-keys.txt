@@ -1,4 +1,0 @@
-abstract
-chapter-02
-a-caucus-race-and-a-long-tale
-specialities
