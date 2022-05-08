@@ -1,8 +1,11 @@
 # FinTech Reguations
 
-Test Test Test
+Text
+
+Footnotes ONLY for **Articles** and **websites** which we cannot add to mendeley.^[Art. 15, FinSA]
+
+@Ankenbrand2017 is here used as an example citation.
+
+Or use citation at the end of sentence [@Ankenbrand2017].
 
 
-test test test
-
-test.

@@ -1,4 +1,4 @@
-introduction
+abstract
 fintech-reguations
 robo-advisors
 ai-driven-process
@@ -12,3 +12,4 @@ crypto-industry
 relai-ag-europes-easiest-bitcoin-investment-app
 house-of-satoshi-home-of-bitcoin
 international-comparison-ch-vs.-uk
+references

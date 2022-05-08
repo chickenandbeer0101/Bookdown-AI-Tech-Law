@@ -119,6 +119,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -136,7 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">AI: Tech and Law</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction<span></span></a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Abstract<span></span></a></li>
 <li class="chapter" data-level="2" data-path="fintech-reguations.html"><a href="fintech-reguations.html"><i class="fa fa-check"></i><b>2</b> FinTech Reguations<span></span></a></li>
 <li class="chapter" data-level="3" data-path="robo-advisors.html"><a href="robo-advisors.html"><i class="fa fa-check"></i><b>3</b> Robo-Advisors<span></span></a>
 <ul>
@@ -154,6 +176,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="international-comparison-ch-vs.-uk.html"><a href="international-comparison-ch-vs.-uk.html"><i class="fa fa-check"></i><b>4</b> International Comparison: CH vs. UK<span></span></a></li>
+<li class="chapter" data-level="5" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>5</b> References<span></span></a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -204,7 +227,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-21"><a href="robo-advisors.html#cb1-21" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;3 months&#39;</span>), </span>
 <span id="cb1-22"><a href="robo-advisors.html#cb1-22" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;6 months or more&#39;</span>), </span>
 <span id="cb1-23"><a href="robo-advisors.html#cb1-23" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&#39;I am already retired&#39;</span>)])</span>
-<span id="cb1-24"><a href="robo-advisors.html#cb1-24" aria-hidden="true" tabindex="-1"></a>    q4 <span class="op">=</span> RadioField(<span class="st">&quot;4. What is your total annual income? (Work, Pension etc.)&quot;</span>, choices <span class="op">=</span> [</span>
+<span id="cb1-24"><a href="robo-advisors.html#cb1-24" aria-hidden="true" tabindex="-1"></a>    q4 <span class="op">=</span> RadioField(<span class="st">&quot;4. What is your total annual income?&quot;</span>, choices <span class="op">=</span> [</span>
 <span id="cb1-25"><a href="robo-advisors.html#cb1-25" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;Less than CHF 50,000&#39;</span>), </span>
 <span id="cb1-26"><a href="robo-advisors.html#cb1-26" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&#39;CHF 50,000 - CHF 100,000&#39;</span>), </span>
 <span id="cb1-27"><a href="robo-advisors.html#cb1-27" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;CHF 100,000 - CHF 150,000&#39;</span>), </span>
@@ -302,7 +325,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="wealthtech" class="section level3 hasAnchor" number="3.4.1">
 <h3><span class="header-section-number">3.4.1</span> WealthTech<a href="robo-advisors.html#wealthtech" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Digital-only asset manager Descartes Finance AG, one of the leading Swiss FinTech startups in the area of Robo-Advisory, aims to democratize investing, both in asset management and pensions. Likewise, the WealthTech startup is focused on sustainability, both internally and externally using ESG-compliant investment products. We had the opportunity to sit down with CEO and co-founder Dr. Adriano Lucatelli and ask him questions regarding the recently introduced FinSa and his overall opinion on regulations in the financial sector. The full interview as video can be watched here.</em></p>
-<p>Regulation should primarily try to prevent macroeconomic financial shocks, not regulate every single process in the financial industry, according to Lucatelli. In Switzerland, WealthTechs are in principle subject to the same regulations as traditional financial institutions. These regulations are extensive, creating significant barriers to entry for WealthTechs. However, many of the WealthTechs in Switzerland are based on artificial intelligence (as is Descartes Finance AG), which in theory eliminates human bias in wealth management and allows wealth managers to focus on relationship building. While these tighter regulations may be necessary for traditional wealth management, for WealthTech’s they do not improve processes or client protection, and instead simply increase the cost of doing business. In practice, WealthTech’s, which were supposed to revolutionize wealth management, compete with large financial institutions like UBS and Credit Suisse.
+<blockquote>
+<p>“Regulation should primarily try to prevent macroeconomic financial shocks, not regulate every single process in the financial industry.”</p>
+<p>— Dr. Adriano Lucatelli</p>
+</blockquote>
+<p>In Switzerland, WealthTechs are in principle subject to the same regulations as traditional financial institutions. These regulations are extensive, creating significant barriers to entry for WealthTechs. However, many of the WealthTechs in Switzerland are based on artificial intelligence (as is Descartes Finance AG), which in theory eliminates human bias in wealth management and allows wealth managers to focus on relationship building. While these tighter regulations may be necessary for traditional wealth management, for WealthTech’s they do not improve processes or client protection, and instead simply increase the cost of doing business. In practice, WealthTech’s, which were supposed to revolutionize wealth management, compete with large financial institutions like UBS and Credit Suisse.
 As an example, the newly introduced FinSa did not contribute significantly to customer protection, but only increased the cost of compliance for the startup, which in turn consumed money that could have been used elsewhere to innovate the services and products offered. Ultimately, all these new regulations won’t do much but rather hinder innovation, Lucatelli says.
 He also uses the crypto market as an example to show what regulations ultimately do to innovation: While asset management, as part of the banking sector, has been heavily regulated since its early days, we have seen the emergence of the new crypto market where there were initially no regulations at all. At the same time, we also saw all the young startups in crypto bursting with innovation and growing into legitimate businesses with ease and within a short period of time. In addition, Lucatelli points out that industry-specific regulations in the financial sector are not helpful. He would prefer to see less regulation overall so that customers have to take more responsibility for their own actions</p>
 </div>
