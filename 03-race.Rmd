@@ -1,1 +1,43 @@
-# A caucus-race and a long tale
+# Chapter 3: Robo-Advisors, a Fintech Case Study
+
+## Introduction
+
+## AI-driven client onboarding process
+
+```{python eval=FALSE}
+# Traditional Risk Profile 
+def new_risk_profile():
+    form = RiskProfile()
+    user_form = UserAddFormRisk()
+
+    if form.validate_on_submit():
+        q1 = form.q1.data
+        q2 = form.q2.data
+        q3 = form.q3.data
+        q4 = form.q4.data
+        q5 = form.q5.data
+        q6= form.q6.data
+        q7= form.q7.data
+        q8 = form.q8.data
+        q9 = form.q9.data
+        q10 = form.q10.data
+
+        answers = [int(q1), int(q2), int(q3), int(q4), int(q5), int(q6), int(q7), int(q8), int(q9), int(q10)]
+        Sum = sum(answers)
+        if Sum < 20:
+            risk_profile = "Preservation"
+        elif Sum >= 20 and Sum < 40:
+            risk_profile = "Konservativ"
+        elif Sum >= 40 and Sum < 60:
+            risk_profile = "Ausgewogen"
+        elif Sum >= 60 and Sum <= 80:
+            risk_profile = "Wachstum"
+        else:
+            risk_profile = "All Equity"
+        
+        return render_template('results.html', risk_profile=risk_profile, form=login_form, user_form = user_form )
+        
+    else:
+        return render_template("risk-form.html", form=form)
+```
+
