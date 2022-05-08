@@ -1,8 +1,14 @@
-abstract
+introduction
 fintech-reguations
 robo-advisors
-introduction
-ai-driven-client-onboarding-process
+ai-driven-process
 pseudocode-of-the-questionnaire-and-the-respectice-scoring
 pseudocode-of-point-scoring-of-the-questionnaire
+finsa
+fadp
+voices-from-the-industry
+wealthtech
+crypto-industry
+relai-ag-europes-easiest-bitcoin-investment-app
+house-of-satoshi-home-of-bitcoin
 international-comparison-ch-vs.-uk

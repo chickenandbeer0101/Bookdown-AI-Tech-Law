@@ -5,8 +5,7 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# Abstract
-
+# Introduction
 
 The FinSA (in German FIDLEG) is a body of law adopted by Swiss parliament in 2018 that came into effect on January 1st of 2020. It goal, as declared by the government, is to “create a level playing field, boost the competitiveness of the financial centre and improve client protection”. 
 

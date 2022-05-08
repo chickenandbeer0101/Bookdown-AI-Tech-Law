@@ -1,11 +1,10 @@
 # Robo-Advisors
+*Consumers and investors are benefiting from both the emergence of new fintech solutions and the further development of existing financial service providers. This has led to a wider range of financial products and services being offered more efficiently and effectively, and companies are under competitive pressure to become more consumer-centric. However, the increasing use of fintech solutions and new technologies also entails risks to which regulators and supervisory authorities are reacting. In this chapter, we aim to analyse the consequences of regulations for startups, whether they are justified, whether they really achieve the desired effect, and ultimately what impact they have on the economy as a whole. To this end, we conducted several interviews with CEOs of fintech companies in Switzerland to get first-hand opinions from those most directly affected by new regulations. Chapter 2 is thus divided into the following subchapters. First, using the example of the adoption of the Financial Services Law (FinSA), which was introduced in 2018 and came into force on January 1, 2020, we analyse the immediate consequences for startups resulting from the implementation of the new regulations. In a second step, which we will later refer to as "Voices from the Industry," we ask industry professionals what they personally think of new regulations. Specifically, we asked Dr. Adriano Lucatelli, CEO and Co-Founder of Descartes Finance AG, Julian Liniger, CEO and Co-Founder of Relai AG and Rino Borini, leturer at HWZ and co-founder of Scarossa and House of Satoshi.*
 
-## Introduction
-Consumers and investors are benefiting from both the emergence of new fintech solutions and the further development of existing financial service providers. This has led to a wider range of financial products and services being offered more efficiently and effectively, and companies are under competitive pressure to become more consumer-centric. However, the increasing use of fintech solutions and new technologies also entails risks to which regulators and supervisory authorities are reacting. In this chapter, we aim to analyse the consequences of regulations for startups, whether they are justified, whether they really achieve the desired effect, and ultimately what impact they have on the economy as a whole. To this end, we conducted several interviews with CEOs of fintech companies in Switzerland to get first-hand opinions from those most directly affected by new regulations. Chapter 2 is thus divided into the following subchapters. First, using the example of the adoption of the Financial Services Law (FinSA), which was introduced in 2018 and came into force on January 1, 2020, we analyse the immediate consequences for startups resulting from the implementation of the new regulations. In a second step, which we will later refer to as "Voices from the Industry," we ask industry professionals what they personally think of new regulations. Specifically, we asked Dr. Adriano Lucatelli, CEO and Co-Founder of Descartes Finance AG and Julian Liniger, CEO and Co-Founder of Relai AG. Rino Borini ...   ADD TEXT HERE
+## AI-driven process
+A robo-advisor is a digital construct that typically relies on algorithms and/or AI to provide financial advice to clients. Below, we attempt to illustrate the AI-driven process behind the client onboarding process to exemplify how AI is used in practice. We have created a simple pseudocode in the Python language to illustrate the exact mechanism by which the robo-advisor categorizes the client Note that we have only used a very naive questionnaire, which in reality would not comply with the revised FinSA, as we do not distinguish between risk capacity and risk preference. Such similar questionnaires would probably have been encountered several years ago in a similar way with robo-advisors. In order to prevent oversteering of the risk profile, the final score for the risk rating must now be based on the lower of risk capacity and risk preference in order to be compliant with the revised FinSA.
 
-### AI-driven client onboarding process
-
-#### Pseudocode of the questionnaire and the respectice scoring
+### Pseudocode of the questionnaire and the respectice scoring
 ```{python eval=FALSE}
 # Questions
 class RiskProfile(FlaskForm):
@@ -23,61 +22,54 @@ class RiskProfile(FlaskForm):
       ('5', '5 - 10 years from now'), 
       ('8', '10 - 20 years from now'), 
       ('10', 'More than 20 years from now')])
-    q3 = RadioField("3. If you were to lose your job today, how long will you be able to maintain your current spending life style before you run out of money in your Savings and Checking account?", 
+    q3 = RadioField("3. If you were to lose your job today, how long will you be able to maintain your current spending life style before you run out of money?", 
     choices = [
       ('0', '1 week'), 
       ('2', '1 month'), 
       ('5', '3 months'), 
       ('8', '6 months or more'), 
-      ('10', 'I am retired')])
-    q4 = RadioField("4. What is your total annual income? (Work, Pension, Social Security, etc.)", choices = [
+      ('10', 'I am already retired')])
+    q4 = RadioField("4. What is your total annual income?", choices = [
       ('0', 'Less than CHF 50,000'), 
       ('2', 'CHF 50,000 - CHF 100,000'), 
       ('5', 'CHF 100,000 - CHF 150,000'), 
       ('8', 'CHF 150,000 - CHF 250,000'), 
       ('10', 'More than CHF 250,000')])
-    q5 = RadioField("5. Please rate the stability of your income.", 
+    q5 = RadioField("5. How is the stability of your income.", 
     choices = [
-      ('0', 'Very low'), 
+      ('0', 'Low'), 
       ('2', 'Below average'), 
       ('5', 'Average'), 
       ('8', 'Above Average'), 
-      ('10', 'Very High')])
-    q6 = RadioField("6. If you unexpectedly received CHF 20,000 to invest today, what would you do?", 
+      ('10', 'Very Stable')])
+    q6 = RadioField("6. If you would receive CHF 20,000 today, what would you do?", 
     choices = [
-      ('0', 'Deposit it in bank account, money market account or an insured cd'), 
-      ('2', 'Invest only in safe quality bonds or bond funds'), 
-      ('5', 'Invest in a proper mix of bonds and stocks'), 
-      ('8', 'Invest only in stocks or stock funds'), 
-      ('10', 'Buy CHF 20,000 worth of lottery tickets')])
+      ('0', 'Deposit it in bank account'), 
+      ('2', 'Invest only in safe bonds'), 
+      ('5', 'Invest in a mix of bonds and stocks'), 
+      ('8', 'Invest only in stockss'), 
+      ('10', 'Buy a new car')])
     q7 = RadioField("7. When you think of the word “risk” in a financial context, which of the following words come to mind?", 
     choices = [
-      ('0', 'Absolute loss'), 
-      ('2', 'Danger'), 
+      ('0', 'Loss'), 
+      ('2', 'Dangerous'), 
       ('5', 'Uncertainty'), 
       ('8', 'Opportunity'), 
       ('10', 'Thrill')])
     q8 = RadioField("8. Which of these statements would best describe your attitudes about the next three years performance of this investment?", 
     choices = [
-      ('0', 'I need to see at least a little return'), 
+      ('0', 'I need to see a little return'), 
       ('2', "I'd have a hard time tolerating any losses"), 
       ('5', 'I can tolerate a small loss'), 
       ('8', 'I can tolerate a loss'), 
-      ('10', "I don't mind a loss")])   
-    q8 = RadioField("8. Which of these statements would best describe your attitudes about the next three years performance of this investment?", 
+      ('10', "I don't mind a loss at all")])
+    q9 = RadioField("9. Throughout the 2009 financial crisis, the SMI lost 50% of its value. Which of the following would you have done if your portfolio experiences a 50% loss?", 
     choices = [
-      ('0', 'I need to see at least a little return'), 
-      ('2', "I'd have a hard time tolerating any losses"), 
-      ('5', 'I can tolerate a small loss'), 
-      ('8', 'I can tolerate a loss'), 
-      ('10', "I don't mind a loss")])
-    q9 = RadioField("9. Throughout the 17-month bear during the 2009 financial crisis, the SMI lost 50% of its value. Which of the following would you have done if your portfolio experiences a 50% loss?", 
-    choices = [
-      ('0', 'Sell all of your remaining investments and remain in cash'), 
-      ('2', "Move all of your investments into bonds and CDs"), 
+      ('0', 'Sell all investments'), 
+      ('2', "Move all investments into bonds"), 
       ('5', 'Change to a more conservative allocation'), 
-      ('8', 'Hold on to your investments'), 
-      ('10', "Invest more")]) 
+      ('8', 'Hold on to investments'), 
+      ('10', "Investeven  more")]) 
     q10 = RadioField("10. How emotionally comfortable are you with volatility?", 
     choices = [
       ('0', 'Plan A'), 
@@ -87,7 +79,8 @@ class RiskProfile(FlaskForm):
       ('10', "Plan E")])
 ```
 
-#### Pseudocode of point scoring of the questionnaire
+### Pseudocode of point scoring of the questionnaire
+Here, our pseudocode classifies the customer into one of five risk categories based on the total score from the questionnaire.
 ```{python eval=FALSE}
 # Traditional Risk Profile 
 def new_risk_profile():
@@ -119,9 +112,42 @@ def new_risk_profile():
         else:
             risk_profile = "All Equity"
         
-        return render_template('results.html', risk_profile=risk_profile, form=login_form, user_form = user_form )
-        
-    else:
-        return render_template("risk-form.html", form=form)
+        return render_template('results.html', risk_profile=risk_profile)
 ```
 
+
+
+## FinSA
+The FinSa primarily regulates how financial services must be provided and how financial instruments must be offered. In the following, some articles from the FinSA, which are assumed to have triggered the greatest changes for startups, are singled out and analyzed in detail.
+
+
+## FADP
+
+
+## Voices from the industry
+*In this subsection, we want to let people from the industry have their say about what they think about regulation, how new laws affect their business, and what they would like to see changed.*  
+
+### WealthTech
+*Digital-only asset manager Descartes Finance AG, one of the leading Swiss FinTech startups in the area of Robo-Advisory, aims to democratize investing, both in asset management and pensions. Likewise, the WealthTech startup is focused on sustainability, both internally and externally using ESG-compliant investment products. We had the opportunity to sit down with CEO and co-founder Dr. Adriano Lucatelli and ask him questions regarding the recently introduced FinSa and his overall opinion on regulations in the financial sector. The full interview as video can be watched here.*
+
+Regulation should primarily try to prevent macroeconomic financial shocks, not regulate every single process in the financial industry, according to Lucatelli. In Switzerland, WealthTechs are in principle subject to the same regulations as traditional financial institutions. These regulations are extensive, creating significant barriers to entry for WealthTechs. However, many of the WealthTechs in Switzerland are based on artificial intelligence (as is Descartes Finance AG), which in theory eliminates human bias in wealth management and allows wealth managers to focus on relationship building. While these tighter regulations may be necessary for traditional wealth management, for WealthTech’s they do not improve processes or client protection, and instead simply increase the cost of doing business. In practice, WealthTech’s, which were supposed to revolutionize wealth management, compete with large financial institutions like UBS and Credit Suisse. 
+As an example, the newly introduced FinSa did not contribute significantly to customer protection, but only increased the cost of compliance for the startup, which in turn consumed money that could have been used elsewhere to innovate the services and products offered. Ultimately, all these new regulations won't do much but rather hinder innovation, Lucatelli says.
+He also uses the crypto market as an example to show what regulations ultimately do to innovation: While asset management, as part of the banking sector, has been heavily regulated since its early days, we have seen the emergence of the new crypto market where there were initially no regulations at all. At the same time, we also saw all the young startups in crypto bursting with innovation and growing into legitimate businesses with ease and within a short period of time. In addition, Lucatelli points out that industry-specific regulations in the financial sector are not helpful. He would prefer to see less regulation overall so that customers have to take more responsibility for their own actions
+
+### Crypto Industry
+
+*In contrast to Descartes Finance AG, which is active in the wealth management industry, Relai AG is operating in the area of cryptocurrencies. We have already talked about why Switzerland in particular is a favourable location for cryptocurrency and blockchain businesses. A number of different factors have certainly contributed to Switzerland coming out on top. One of them is an efficient and transparent government. Another advantage was the lack of registration requirements for ICOs and blockchain-related businesses and crypto companies. Likewise, very few regulations and laws relevant to crypto companies exist even today. It seems like both the Swiss government and the Financial Market Supervisory Authority (FINMA) might have recognized the potential of cryptocurrencies. For regulatory purposes, FINMA has imposed anti-money laundering (AML) and know-your-customer (KYC) requirements in Switzerland. In addition, new transaction thresholds for KYC checks were introduced this month, lowering threshold value for exchange transactions in cryptocurrencies from CHF 5’000 to CHF 1’000.*
+
+#### Relai AG: “Europe’s easiest Bitcoin investment app”
+In the case of Relai AG, the startup is not directly regulated by FINMA, but indirectly via a self-regulatory organization (SRO). This is because the Anti-Money Laundering Act (AML) stipulates that financial intermediaries must join an SRO organized under private law to monitor compliance with due diligence requirements to prevent and avoid money laundering. One major advantage for Relai’s clients is that they can use the app and invest in Bitcoin without registration or verification if the daily investment amount does not exceed CHF 1,000 and/or the annual investment amount does not exceed CHF 100,000. This is the key to Relai’s attractiveness and success, as most of its younger clientele can start investing within a few minutes. However, a slowly growing portion of Relai's customers exceed the above investment amounts which then requires a registration. The startup was therefore indirectly forced to acquire a broker license in order to circumvent the recently introduced changes regarding the lowering of the threshold for cryptocurrency exchanges and thus maintain its attractiveness for its clients.
+
+Liniger also explicitly emphasized in our interview that the fact that Switzerland has such lax regulation regarding cryptocurrencies made it possible to found their startup in the first place. According to Liniger, the regulatory situation in Switzerland is unique compared to other European countries. This might be an indication that regulation is indeed an important factor for the innovative power of the startup scene. In particular, if we compare the two industries of asset management and cryptocurrencies, in the latter we can see that more and more fintechs are emerging. Liniger also goes on to say that he personally appreciates the fact that in Switzerland, new regulations are not introduced from one day to the next, but rather take a long time, so that the industry has enough time to adjust. He would even go so far as to say that this is an advantage that Switzerland has compared to other European countries. He also mentions that he thinks Switzerland is very innovation friendly and he really appreciates the sandbox environment. Also, most fintechs in the crypto industry do not need a full banking license, but FINMA offers "light versions". 
+
+#### House of Satoshi: “Home of Bitcoin”
+*Rino Borini is co-founder and CEO of Scarossa, an independent consulting and media company, and the House of Satoshi, a store for crypto currencies located in Zurich where you can, among other things, convert crypto currencies into currencies. In the fall of 2020, the business magazine BILANZ named Borini one of the Digital Shapers, i.e. the 100 most important minds driving digitalization in the country. Rino Borini is also chairman of the board of directors at digital asset manager Descartes Finance. Moreover, he is also the course director for the "Digital Finance" and "Digital Insurance" courses at HWZ Zurich.*
+
+He starts our interview by asserting that he sees no difference between traditional banks and fintech startups when it comes to regulation in Switzerland. He thinks that with fintech licensing and sandboxes, an environment has been created that could actually foster innovation. But when he hears from startups how long it takes to get a license, which is the basic requirement for a startup to get started, he gets extremely frustrated. He strongly believes that the licensing process needs to be massively accelerated on the one hand, and also simplified on the other.
+
+Borini further explains that he likes the regulations in the crypto industry as, compared internationally, Switzerland has one of the most modern DLT laws. So Switzerland does have the opportunity to develop exciting technologies in the crypto economy. But then, at the same time, he also sees circumstances that clearly hinder innovation in Switzerland: On the one hand, FINMA, which seems to violate technology neutrality, as FINMA does not necessarily regulate crypto and fintech identically, and on the other hand, traditional banks, which do not want to help crypto startups. To back up his criticism towards technology neutrality, he mentions the example of the CHF 1,000 limit for cryptocurrencies, "If I go to the traditional ATM, I can withdraw CHF 5,000 per day, but with crypto ATMs I now have a limit of CHF 1,000. So fiat money is treated differently than cryptocurrency," Borini says. This ultimately leads to innovation dampening on the one hand and also does not fit with the slogan "Blockchain Nation Switzerland." Further, he adds that it is extremely difficult for crypto startups to find a partner bank. Even just opening an account can be very difficult. “Not because it's not legally possible, but because banks simply don't want it”, according to Borini. He also hopes that FINMA will set a framework for DeFi (Decentralized Finance) as soon as possible. Otherwise, Switzerland should soon stop calling itself "Blockchain Nation Switzerland”. 
+
+Regarding the question of what Switzerland should do in terms of regulations to promote innovation, Borino answers that with wealth tech and crypto, Switzerland has great potential to maintain a leading role internationally. In particular, he wishes Swiss citizens had more knowledge about the technologies and the potentials associated with them. According to Borino, we should have a different mindset: Not "yes, but..." but "yes, why not?" Regulators should also work much more closely with industries. Similarly, regulations should be updated much more often and adapted to circumstances. Borino believes that FINMA should not innovate the industry itself, but simply allow it. And likewise, FINMA needs a power team with leaders from the industry and the community who understand the technology and potential and actively listen to startups to identify problems. And finally, according to Borini, there should be a "fast lane," like at the airport, for the startups that have everything ready to go, so to speak, and could get going, have a good business model, and comply with laws and regulations. This way, these startups can quickly get a license and start doing business. 
