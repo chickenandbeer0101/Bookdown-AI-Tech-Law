@@ -4,6 +4,22 @@ Consumers and investors are benefiting from both the emergence of new fintech so
 ## AI-driven process
 A robo-advisor is a digital construct that typically relies on algorithms and/or AI to provide financial advice to clients. Below, we attempt to illustrate the AI-driven process behind the client onboarding process to exemplify how AI is used in practice. We have created a simple pseudocode in the Python language to illustrate the exact mechanism by which the robo-advisor categorizes the client Note that we have only used a very naive questionnaire, which in reality would not comply with the revised FinSA, as we do not distinguish between risk capacity and risk preference. Such similar questionnaires would probably have been encountered several years ago in a similar way with robo-advisors. In order to prevent oversteering of the risk profile, the final score for the risk rating must now be based on the lower of risk capacity and risk preference in order to be compliant with the revised FinSA.
 
+### Defining 5 risk categories
+In the following exemplary code we define 5 different risk catgeories with the respective investment strategy name of which one later the robo-advisor wil assign the client to.
+```{python eval=FALSE}
+from datetime import datetime
+from dateutil.relativedelta import 
+
+def investment_recommendation(risk_level):
+    levels = {
+            'Conservative': '80% bonds, 20% equities',
+            'Balanced': '60% bonds, 40% equities',
+            'Growth': '40% bonds, 60% equities',
+            'Opportunistic': '20% bonds, 80% equities',
+            'All Equity': '0% bonds, 100% equities',
+```
+
+
 ### Pseudocode of the questionnaire and the respectice scoring
 ```{python eval=FALSE}
 # Questions
@@ -18,11 +34,11 @@ class RiskProfile(FlaskForm):
       ('10', '30 or younger')])
     q2 = RadioField("2. What is your investment horizon?", choices = [
       ('0', 'Within the next year'), 
-      ('2', '2 - 5 years from now'), 
-      ('5', '5 - 10 years from now'), 
-      ('8', '10 - 20 years from now'), 
-      ('10', 'More than 20 years from now')])
-    q3 = RadioField("3. If you were to lose your job today, how long will you be able to maintain your current spending life style before you run out of money?", 
+      ('2', '2 - 5 years'), 
+      ('5', '5 - 10 years'), 
+      ('8', '10 - 20 years'), 
+      ('10', 'More than 20 years')])
+    q3 = RadioField("3. If you were to lose your job today, how long will you be able to maintain your current spending life style?", 
     choices = [
       ('0', '1 week'), 
       ('2', '1 month'), 
@@ -102,19 +118,85 @@ def new_risk_profile():
         answers = [int(q1), int(q2), int(q3), int(q4), int(q5), int(q6), int(q7), int(q8), int(q9), int(q10)]
         Sum = sum(answers)
         if Sum < 20:
-            risk_profile = "Preservation"
+            risk_profile = "Conservative"
         elif Sum >= 20 and Sum < 40:
-            risk_profile = "Konservativ"
+            risk_profile = "Balanced"
         elif Sum >= 40 and Sum < 60:
-            risk_profile = "Ausgewogen"
+            risk_profile = "Growth"
         elif Sum >= 60 and Sum <= 80:
-            risk_profile = "Wachstum"
+            risk_profile = "Opportunistic"
         else:
             risk_profile = "All Equity"
         
         return render_template('results.html', risk_profile=risk_profile)
 ```
 
+### Portfolio Recommendation
+Here, we illustrate in a naive way how the robo
+```{python eval=FALSE}
+def recommend_portfolio(intent_request):
+    """
+    Performs dialog management and fulfillment for recommending a portfolio.
+    """
+
+    first_name = get_slots(intent_request)["firstName"]
+    age = get_slots(intent_request)["age"]
+    investment_amount = get_slots(intent_request)["investmentAmount"]
+    risk_level = get_slots(intent_request)["riskLevel"]
+    source = intent_request["invocationSource"]
+
+    if source == "DialogCodeHook":
+        # Perform basic validation on the supplied input slots.
+        # Use the elicitSlot dialog action to re-prompt
+        # for the first violation detected.
+        
+        if age is not None:
+            age = parse_int(age)
+            
+            if age <0:
+                return build_validation_result(False, "Your age needs to be greater than 0 in order to use this service")
+            elif age >=65:
+                return build_validation_result(False, "You need to be between 0 and 64 in order to use this service")
+       
+        if investment_amount is not None:
+            investment_amount = parse_int(investment_amount)
+            if investment_amount< 5000:
+                return build_validation_result(False,"The minimum investment amount is $5000")
+            else:
+                initial_recommendation = get_investment_recommendation(risk_level)
+                return close(
+        intent_request["sessionAttributes"],
+        "Fulfilled",
+        {
+            "contentType": "PlainText",
+            "content": """{} thank you for your information;
+            based on the risk level you defined, my recommendation is to choose an investment portfolio with {}
+            """.format(
+                first_name, initial_recommendation
+            ),
+        },
+    )
+                #return build_validation_result(True, None, None)
+
+        # Fetch current session attibutes
+        output_session_attributes = intent_request["sessionAttributes"]
+        return delegate(output_session_attributes, get_slots(intent_request))
+        
+    initial_recommendation = get_investment_recommendation(risk_level)
+    
+    return close(
+        intent_request["sessionAttributes"],
+        "Fulfilled",
+        {
+            "contentType": "PlainText",
+            "content": """{} thank you for your information;
+            based on the risk level you defined, my recommendation is to choose an investment portfolio with {}
+            """.format(
+                first_name, initial_recommendation
+            ),
+        },
+    )
+```
 
 
 ## FinSA
