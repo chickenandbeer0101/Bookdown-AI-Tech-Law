@@ -10,13 +10,16 @@ The same magic for **Website links**, simply put inside footnote.^[https://www.l
 
 Or use citation at the end of sentence [@Ankenbrand2017].
 
-Links are addes as follows: [YouTube](https://www.youtube.com)
+Links are added as follows: [YouTube](https://www.youtube.com)
 
 
-Let's not add too many subchapters. It gets messy in markdown
-
-## Chapter
+## Let's not add too many subchapters. It gets messy in markdown
 ### Subchapter
 #### Sub-sub chapter (already too much)
 ##### Way too much!!!!
+
+
+## Embed Youtube Videos with a still frame
+
+[![IMAGE_ALT](https://img.youtube.com/vi/-xmRaaVkvd8/0.jpg)](https://img.youtube.com/vi/-xmRaaVkvd8/0.jpg)
 
