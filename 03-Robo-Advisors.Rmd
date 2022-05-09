@@ -24,7 +24,7 @@ What we are currently seeing in the robo-advisor industry is that questionnaires
 # Questions
 class risk_profile(FlaskForm):
     
-    q1 = RadioField("1. What is your current age?", 
+    q1 = RadioField("1. Please enter your age", 
     choices = [
       ('0', 'More than 60'),
       ('2', 'Between 51 and 60'), 
@@ -37,7 +37,7 @@ class risk_profile(FlaskForm):
       ('5', '5 - 10 years'), 
       ('8', '10 - 20 years'), 
       ('10', 'More than 20 years')])
-    q3 = RadioField("3. If you were to lose your job today, how long will you be able to maintain your current spending life style?", 
+    q3 = RadioField("3. If you were to lose your job, how long would you be able to finance your current living?", 
     choices = [
       ('0', '1 week'), 
       ('2', '1 month'), 
@@ -50,7 +50,7 @@ class risk_profile(FlaskForm):
       ('5', 'CHF 100,000 - CHF 150,000'), 
       ('8', 'CHF 150,000 - CHF 250,000'), 
       ('10', 'More than CHF 250,000')])
-    q5 = RadioField("5. How is the stability of your income.", 
+    q5 = RadioField("5. How is the stability of your income", 
     choices = [
       ('0', 'Low'), 
       ('2', 'Below average'), 
@@ -71,12 +71,12 @@ class risk_profile(FlaskForm):
       ('5', 'Uncertainty'), 
       ('8', 'Opportunity'), 
       ('10', 'Thrill')])
-    q8 = RadioField("8. Which of these statements would best describe your attitudes about the next three years performance of this investment?", 
+    q8 = RadioField("8. Which of the following statements would best describe your attitude regarding investing?", 
     choices = [
-      ('0', 'I need to see a little return'), 
-      ('2', "I'd have a hard time tolerating any losses"), 
-      ('5', 'I can tolerate a small loss'), 
-      ('8', 'I can tolerate a loss'), 
+      ('0', "I need to see a little return"), 
+      ('2', "I would have a hard time tolerating any losses"), 
+      ('5', "I can tolerate a small loss"), 
+      ('8', "I can tolerate a loss"), 
       ('10', "I don't mind a loss at all")])
     q9 = RadioField("9. Throughout the 2009 financial crisis, the SMI lost 50% of its value. Which of the following would you have done if your portfolio experiences a 50% loss?", 
     choices = [
@@ -85,13 +85,13 @@ class risk_profile(FlaskForm):
       ('5', 'Change to a more conservative allocation'), 
       ('8', 'Hold on to investments'), 
       ('10', "Investeven  more")]) 
-    q10 = RadioField("10. How emotionally comfortable are you with volatility?", 
+    q10 = RadioField("10. As return increases so does risk. Which statement applies to you?", 
     choices = [
-      ('0', 'Plan A'), 
-      ('2', "Plan B"), 
-      ('5', 'Plan C'), 
-      ('8', 'Plan D'), 
-      ('10', "Plan E")])
+      ('0', "I am not willing to accept any fluctuations in value"), 
+      ('2', "I can live with fluctuations between 0% to 5%"), 
+      ('5', "Value fluctuations between 5% and 10% are fine"), 
+      ('8', "I can accept fluctuations between 10% and 20%"), 
+      ('10', "Even fluctuations over 20% are fine for me")])
 ```
 
 ### Point distribution
