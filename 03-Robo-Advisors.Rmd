@@ -3,14 +3,14 @@ Consumers and investors are benefiting from both the emergence of new fintech so
 
 
 ## AI-driven process
-A robo-advisor is a digital construct that typically relies on algorithms and/or AI to provide financial advice to clients. Below, we attempt to illustrate the AI-driven process behind the client onboarding process to exemplify how AI is used in practice. We have created several pseudocode's in the Python language to illustrate the exact mechanism by which the robo-advisor categorizes the client and then finally creates an investment advice. Note that we have only used a very naive questionnaire, which in reality would not comply with the revised FinSA, as we do not distinguish between risk capacity and risk preference as this would be needed to prevent any oversteering of the risk profile. One way to do this would be to count the risk capacity and risk preference scores separately and then use the respective lower score in each case for the final risk category assignment.
+A robo-advisor is a digital construct that typically relies on algorithms and/or AI to provide financial advice to clients. Below, we attempt to illustrate some of the AI-driven process of robo-advisors to exemplify how AI is used in practice. We have created several pseudocode's in the Python language to illustrate the exact mechanism by which the robo-advisor categorizes the client and then finally creates an investment advice. Note that we have only used a very naive questionnaire, which in reality would not comply with the revised FinSA, as we do not distinguish between risk capacity and risk preference as this would be needed to prevent any oversteering of the risk profile. One way to do this would be to count the risk capacity and risk preference scores separately and then use the respective lower score in each case for the final risk category assignment. At the end we also included a pseudocode for the rebalancing.
 
 ### Risk categories
 In the following exemplary code we define 5 different risk categeories with the respective investment strategy name of which one later the robo-advisor wil assign the client to.
 ```{python eval=FALSE}
 # Defining risk categories
-def investment_recommendation(risk_level):
-    levels = {
+def investment_recommendation():
+    risk_levels = {
             'Conservative': '80% bonds, 20% equities',
             'Balanced': '60% bonds, 40% equities',
             'Growth': '40% bonds, 60% equities',
