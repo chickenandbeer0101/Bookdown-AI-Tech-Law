@@ -170,6 +170,52 @@ def portfolio_recommendation(intent_request):
 ```
 
 
+### Rebalancing
+In this small code section, we want to cover another AI-driven process within Robo-Advisory: the rebalancing process. As the economy is constantly changing, so is the stock market and the respective stock prices. In order to keep the risk level constant (the risk level the client chose when they first invested), the robo-advisor (and any asset manager in general) must constantly adjust the allocation of each position within the investment portfolio to match the target allocation. This process can be done quite easily using AI. Starting from a predefined allocation overview of all components of the investment portfolio, the following pseudo-code regularly checks (monthly or quarterly, depending on the client's preferences) whether the actual allocation in the portfolio still matches the target allocation. Deviations occur simply due to stock price increases/decreases. If discrepancies exist, either an additional purchase of the stock or a sale is ordered. Even though this process is not specifically affected by any recently introduced regulation (e.g. FIDLEG or FINIA), we still wanted to include a short pseudo code.
+```{python eval=FALSE}
+# Define target portfolio
+target_portfolio = {
+    "AAPL": 30.00,
+    "IBM": 40.00,
+    "AMZN": 25.00,
+    "Cash": 5.00
+}
+
+# Define example portfolio which needs to be rebalanced
+portfolio = {
+    "AAPL": 40.00,
+    "IBM": 35.00,
+    "AMZN": 20.00,
+    "CASH": 5.00
+}
+
+# Set tolerance value in %
+tolerance = 5.00
+
+# Iterate over all stocks in our current portfolio
+total_value = 0
+for i in portfolio:
+    # Calculate the total value of our portfolio (including cash)
+    if i == Cash:
+        total_value += portfolio[i]
+        continue
+    total_value += price * portfolio[i]
+    prices[i] = price
+
+# Record which stocks need to be rebalanced
+rebalance_needed = dict()
+for i in target_portfolio:
+
+    # Rebalance needed if: difference between example and target portfolio is greater than tolerance
+    difference = ((prices[i] * portfolio[i]) / total_value) - target_portfolio[i]
+      if abs(difference) > tolerance:
+          rebalance_needed[i] = difference
+
+# Now we can rebalance the portfolio
+while rebalance_needed:
+    quantity = int((target_portfolio[ticker] * (total_value / prices[ticker])) - portfolio[ticker])
+```
+
 ## FinSA
 The FinSa primarily regulates how financial services must be provided and how financial instruments must be offered. In the following, some articles from the FinSA, which are assumed to have triggered the greatest changes for startups, are singled out and analyzed in detail.
 

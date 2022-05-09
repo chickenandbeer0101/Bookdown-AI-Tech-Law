@@ -11,6 +11,7 @@ risk-categories
 questionnaire-and-the-respectivce-scoring
 point-distribution
 portfolio-recommendation
+rebalancing
 finsa
 fadp
 voices-from-the-industry
