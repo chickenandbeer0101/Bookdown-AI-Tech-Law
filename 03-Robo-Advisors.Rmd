@@ -131,7 +131,7 @@ def new_risk_profile():
 ```
 
 ### Portfolio Recommendation
-And finally, in this part, we naively illustrate how the robo-advisor would recommend an investment strategy to the client based on the answers to the questionnaire.
+Finally, in this part, we naively present how the robo-advisor would recommend an investment strategy to the client based on the answers given to the questionnaire. We added two requirements: First, the client must be at least 18 years old and not yet retired to become a client with our company. Second, the minimum investment amount is CHF 5,000; a lower amount would simply not be interesting for us from an economic point of view. We have also added a small feature that allows the algorithm to automatically combine our recommended investment portfolio if the above two requirements are met.
 ```{python eval=FALSE}
 # Final Recommendation
 def portfolio_recommendation(intent_request):

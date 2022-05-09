@@ -162,6 +162,10 @@ div.csl-indent {
 <li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction<span></span></a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#citation-and-footnotes-check"><i class="fa fa-check"></i><b>2.1</b> Citation and Footnotes Check<span></span></a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#chapter"><i class="fa fa-check"></i><b>2.2</b> Chapter<span></span></a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="introduction.html"><a href="introduction.html#subchapter"><i class="fa fa-check"></i><b>2.2.1</b> Subchapter<span></span></a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="robo-advisors.html"><a href="robo-advisors.html"><i class="fa fa-check"></i><b>3</b> Robo-Advisors<span></span></a>
 <ul>
@@ -330,7 +334,7 @@ div.csl-indent {
 </div>
 <div id="portfolio-recommendation" class="section level3 hasAnchor" number="3.1.4">
 <h3><span class="header-section-number">3.1.4</span> Portfolio Recommendation<a href="robo-advisors.html#portfolio-recommendation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>And finally, in this part, we naively illustrate how the robo-advisor would recommend an investment strategy to the client based on the answers to the questionnaire.</p>
+<p>Finally, in this part, we naively present how the robo-advisor would recommend an investment strategy to the client based on the answers given to the questionnaire. We added two requirements: First, the client must be at least 18 years old and not yet retired to become a client with our company. Second, the minimum investment amount is CHF 5,000; a lower amount would simply not be interesting for us from an economic point of view. We have also added a small feature that allows the algorithm to automatically combine our recommended investment portfolio if the above two requirements are met.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="robo-advisors.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Final Recommendation</span></span>
 <span id="cb4-2"><a href="robo-advisors.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> portfolio_recommendation(intent_request):</span>
 <span id="cb4-3"><a href="robo-advisors.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -338,34 +342,32 @@ div.csl-indent {
 <span id="cb4-5"><a href="robo-advisors.html#cb4-5" aria-hidden="true" tabindex="-1"></a>    age <span class="op">=</span> get_slots(intent_request)[<span class="st">&quot;age&quot;</span>]</span>
 <span id="cb4-6"><a href="robo-advisors.html#cb4-6" aria-hidden="true" tabindex="-1"></a>    investment_amount <span class="op">=</span> get_slots(intent_request)[<span class="st">&quot;investmentAmount&quot;</span>]</span>
 <span id="cb4-7"><a href="robo-advisors.html#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="robo-advisors.html#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> source <span class="op">==</span> <span class="st">&quot;DialogCodeHook&quot;</span>:</span>
-<span id="cb4-9"><a href="robo-advisors.html#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="robo-advisors.html#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> age <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
-<span id="cb4-11"><a href="robo-advisors.html#cb4-11" aria-hidden="true" tabindex="-1"></a>            age <span class="op">=</span> parse_int(age)</span>
-<span id="cb4-12"><a href="robo-advisors.html#cb4-12" aria-hidden="true" tabindex="-1"></a>            </span>
-<span id="cb4-13"><a href="robo-advisors.html#cb4-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> age <span class="op">&lt;</span><span class="dv">18</span>:</span>
-<span id="cb4-14"><a href="robo-advisors.html#cb4-14" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> build_validation_result(<span class="va">False</span>, <span class="st">&quot;Your need to be at least 18 years old to use our service&quot;</span>)</span>
-<span id="cb4-15"><a href="robo-advisors.html#cb4-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> age <span class="op">&gt;=</span><span class="dv">65</span>:</span>
-<span id="cb4-16"><a href="robo-advisors.html#cb4-16" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> build_validation_result(<span class="va">False</span>, <span class="st">&quot;You must not be retired yet&quot;</span>)</span>
-<span id="cb4-17"><a href="robo-advisors.html#cb4-17" aria-hidden="true" tabindex="-1"></a>       </span>
-<span id="cb4-18"><a href="robo-advisors.html#cb4-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> investment_amount <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
-<span id="cb4-19"><a href="robo-advisors.html#cb4-19" aria-hidden="true" tabindex="-1"></a>            investment_amount <span class="op">=</span> parse_int(investment_amount)</span>
-<span id="cb4-20"><a href="robo-advisors.html#cb4-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> investment_amount <span class="op">&lt;</span> <span class="dv">5000</span>:</span>
-<span id="cb4-21"><a href="robo-advisors.html#cb4-21" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> build_validation_result(<span class="va">False</span>,<span class="st">&quot;The minimum investment amount is CHF 5000&quot;</span>)</span>
-<span id="cb4-22"><a href="robo-advisors.html#cb4-22" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
-<span id="cb4-23"><a href="robo-advisors.html#cb4-23" aria-hidden="true" tabindex="-1"></a>                initial_recommendation <span class="op">=</span> new_risk_profile</span>
-<span id="cb4-24"><a href="robo-advisors.html#cb4-24" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> close(</span>
-<span id="cb4-25"><a href="robo-advisors.html#cb4-25" aria-hidden="true" tabindex="-1"></a>        intent_request[<span class="st">&quot;sessionAttributes&quot;</span>],</span>
-<span id="cb4-26"><a href="robo-advisors.html#cb4-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Fulfilled&quot;</span>,</span>
-<span id="cb4-27"><a href="robo-advisors.html#cb4-27" aria-hidden="true" tabindex="-1"></a>        {</span>
-<span id="cb4-28"><a href="robo-advisors.html#cb4-28" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;contentType&quot;</span>: <span class="st">&quot;PlainText&quot;</span>,</span>
-<span id="cb4-29"><a href="robo-advisors.html#cb4-29" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;content&quot;</span>: <span class="st">&quot;&quot;&quot;</span><span class="sc">{}</span><span class="st"> thank you for your information;</span></span>
-<span id="cb4-30"><a href="robo-advisors.html#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="st">            Based on your answers, our recommendation is to choose the </span><span class="sc">{}</span><span class="st"> investment portfolio</span></span>
-<span id="cb4-31"><a href="robo-advisors.html#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="st">            &quot;&quot;&quot;</span>.<span class="bu">format</span>(</span>
-<span id="cb4-32"><a href="robo-advisors.html#cb4-32" aria-hidden="true" tabindex="-1"></a>                first_name, initial_recommendation</span>
-<span id="cb4-33"><a href="robo-advisors.html#cb4-33" aria-hidden="true" tabindex="-1"></a>            ),</span>
-<span id="cb4-34"><a href="robo-advisors.html#cb4-34" aria-hidden="true" tabindex="-1"></a>        },</span>
-<span id="cb4-35"><a href="robo-advisors.html#cb4-35" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
+<span id="cb4-8"><a href="robo-advisors.html#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> age <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb4-9"><a href="robo-advisors.html#cb4-9" aria-hidden="true" tabindex="-1"></a>        age <span class="op">=</span> parse_int(age)</span>
+<span id="cb4-10"><a href="robo-advisors.html#cb4-10" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb4-11"><a href="robo-advisors.html#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> age <span class="op">&lt;</span><span class="dv">18</span>:</span>
+<span id="cb4-12"><a href="robo-advisors.html#cb4-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> build_validation_result(<span class="va">False</span>, <span class="st">&quot;Your need to be at least 18 years old to use our service&quot;</span>)</span>
+<span id="cb4-13"><a href="robo-advisors.html#cb4-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> age <span class="op">&gt;=</span><span class="dv">65</span>:</span>
+<span id="cb4-14"><a href="robo-advisors.html#cb4-14" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> build_validation_result(<span class="va">False</span>, <span class="st">&quot;You must not be retired yet&quot;</span>)</span>
+<span id="cb4-15"><a href="robo-advisors.html#cb4-15" aria-hidden="true" tabindex="-1"></a>       </span>
+<span id="cb4-16"><a href="robo-advisors.html#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> investment_amount <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb4-17"><a href="robo-advisors.html#cb4-17" aria-hidden="true" tabindex="-1"></a>        investment_amount <span class="op">=</span> parse_int(investment_amount)</span>
+<span id="cb4-18"><a href="robo-advisors.html#cb4-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> investment_amount <span class="op">&lt;</span> <span class="dv">5000</span>:</span>
+<span id="cb4-19"><a href="robo-advisors.html#cb4-19" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> build_validation_result(<span class="va">False</span>,<span class="st">&quot;The minimum investment amount is CHF 5&#39;000&quot;</span>)</span>
+<span id="cb4-20"><a href="robo-advisors.html#cb4-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb4-21"><a href="robo-advisors.html#cb4-21" aria-hidden="true" tabindex="-1"></a>            initial_recommendation <span class="op">=</span> new_risk_profile</span>
+<span id="cb4-22"><a href="robo-advisors.html#cb4-22" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> close(</span>
+<span id="cb4-23"><a href="robo-advisors.html#cb4-23" aria-hidden="true" tabindex="-1"></a>    intent_request[<span class="st">&quot;sessionAttributes&quot;</span>],</span>
+<span id="cb4-24"><a href="robo-advisors.html#cb4-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Fulfilled&quot;</span>,</span>
+<span id="cb4-25"><a href="robo-advisors.html#cb4-25" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb4-26"><a href="robo-advisors.html#cb4-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;contentType&quot;</span>: <span class="st">&quot;PlainText&quot;</span>,</span>
+<span id="cb4-27"><a href="robo-advisors.html#cb4-27" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;content&quot;</span>: <span class="st">&quot;&quot;&quot;</span><span class="sc">{}</span><span class="st"> thank you for your information;</span></span>
+<span id="cb4-28"><a href="robo-advisors.html#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="st">        Based on your answers, our recommendation is to choose the </span><span class="sc">{}</span><span class="st"> investment portfolio</span></span>
+<span id="cb4-29"><a href="robo-advisors.html#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="st">        &quot;&quot;&quot;</span>.<span class="bu">format</span>(</span>
+<span id="cb4-30"><a href="robo-advisors.html#cb4-30" aria-hidden="true" tabindex="-1"></a>            first_name, initial_recommendation</span>
+<span id="cb4-31"><a href="robo-advisors.html#cb4-31" aria-hidden="true" tabindex="-1"></a>        ),</span>
+<span id="cb4-32"><a href="robo-advisors.html#cb4-32" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb4-33"><a href="robo-advisors.html#cb4-33" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 </div>
 </div>
 <div id="finsa" class="section level2 hasAnchor" number="3.2">
@@ -377,7 +379,7 @@ div.csl-indent {
 </div>
 <div id="voices-from-the-industry" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> Voices from the industry<a href="robo-advisors.html#voices-from-the-industry" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><em>In this subsection, we want to let people from the industry have their say about what they think about regulation, how new laws affect their business, and what they would like to see changed.</em></p>
+<p>In this subsection, we want to let people from the industry have their say about what they think about regulation, how new laws affect their business, and what they would like to see changed.</p>
 <div id="wealthtech" class="section level3 hasAnchor" number="3.4.1">
 <h3><span class="header-section-number">3.4.1</span> WealthTech<a href="robo-advisors.html#wealthtech" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><em>Digital-only asset manager Descartes Finance AG, one of the leading Swiss FinTech startups in the area of Robo-Advisory, aims to democratize investing, both in asset management and pensions. Likewise, the WealthTech startup is focused on sustainability, both internally and externally using ESG-compliant investment products. We had the opportunity to sit down with CEO and co-founder Dr. Adriano Lucatelli and ask him questions regarding the recently introduced FinSa and his overall opinion on regulations in the financial sector. The full interview as video can be watched <a href="https://www.youtube.com">here (ADD YOUTUBE LINK !!!!)</a></em></p>
