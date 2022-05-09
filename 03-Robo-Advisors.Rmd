@@ -15,8 +15,7 @@ def investment_recommendation(risk_level):
             'Growth': '40% bonds, 60% equities',
             'Opportunistic': '20% bonds, 80% equities',
             'All Equity': '0% bonds, 100% equities',
-              }
-    return levels[risk_level.lower()]
+            
 ```
 
 
@@ -141,34 +140,32 @@ def portfolio_recommendation(intent_request):
     age = get_slots(intent_request)["age"]
     investment_amount = get_slots(intent_request)["investmentAmount"]
 
-    if source == "DialogCodeHook":
-
-        if age is not None:
-            age = parse_int(age)
+    if age is not None:
+        age = parse_int(age)
             
-            if age <18:
-                return build_validation_result(False, "Your need to be at least 18 years old to use our service")
-            elif age >=65:
-                return build_validation_result(False, "You must not be retired yet")
+        if age <18:
+            return build_validation_result(False, "Your need to be at least 18 years old to use our service")
+        elif age >=65:
+            return build_validation_result(False, "You must not be retired yet")
        
-        if investment_amount is not None:
-            investment_amount = parse_int(investment_amount)
-            if investment_amount < 5000:
-                return build_validation_result(False,"The minimum investment amount is CHF 5000")
-            else:
-                initial_recommendation = new_risk_profile
-                return close(
-        intent_request["sessionAttributes"],
+    if investment_amount is not None:
+        investment_amount = parse_int(investment_amount)
+        if investment_amount < 5000:
+            return build_validation_result(False,"The minimum investment amount is CHF 5'000")
+        else:
+            initial_recommendation = new_risk_profile
+            return close(
+    intent_request["sessionAttributes"],
         "Fulfilled",
-        {
-            "contentType": "PlainText",
-            "content": """{} thank you for your information;
-            Based on your answers, our recommendation is to choose the {} investment portfolio
-            """.format(
-                first_name, initial_recommendation
-            ),
-        },
-    )
+    {
+        "contentType": "PlainText",
+        "content": """{} thank you for your information;
+        Based on your answers, our recommendation is to choose the {} investment portfolio
+        """.format(
+            first_name, initial_recommendation
+        ),
+    },
+)
     
 ```
 
@@ -181,7 +178,7 @@ The FinSa primarily regulates how financial services must be provided and how fi
 
 
 ## Voices from the industry
-*In this subsection, we want to let people from the industry have their say about what they think about regulation, how new laws affect their business, and what they would like to see changed.*  
+In this subsection, we want to let people from the industry have their say about what they think about regulation, how new laws affect their business, and what they would like to see changed.
 
 ### WealthTech
 *Digital-only asset manager Descartes Finance AG, one of the leading Swiss FinTech startups in the area of Robo-Advisory, aims to democratize investing, both in asset management and pensions. Likewise, the WealthTech startup is focused on sustainability, both internally and externally using ESG-compliant investment products. We had the opportunity to sit down with CEO and co-founder Dr. Adriano Lucatelli and ask him questions regarding the recently introduced FinSa and his overall opinion on regulations in the financial sector. The full interview as video can be watched [here (ADD YOUTUBE LINK !!!!)](https://www.youtube.com)*
