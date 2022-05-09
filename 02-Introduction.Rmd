@@ -23,5 +23,6 @@ For more specific citations inlcuding page number, maybe add as a footnote?^[@An
 
 ## Embed Youtube Videos with a still frame
 
+
 [![IMAGE_ALT](https://img.youtube.com/vi/-xmRaaVkvd8/0.jpg)](https://www.youtube.com/watch?v=-xmRaaVkvd8)
 
