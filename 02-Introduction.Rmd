@@ -12,6 +12,8 @@ Or use citation at the end of sentence [@Ankenbrand2017].
 
 Links are added as follows: [YouTube](https://www.youtube.com)
 
+For more specific citations inlcuding page number, maybe add as a footnote?^[@Ankenbrand2017, p.420]
+
 
 ## Let's not add too many subchapters. It gets messy in markdown
 ### Subchapter
