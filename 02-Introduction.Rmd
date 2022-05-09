@@ -12,9 +12,14 @@ Or use citation at the end of sentence [@Ankenbrand2017].
 
 Links are added as follows: [YouTube](https://www.youtube.com)
 
+### Including page numbers in citations
+
 For more specific citations inlcuding page number, maybe add as a footnote?^[@Ankenbrand2017, p.420]. 
+
 @Ankenbrand2017 ^[p. 420-421] is again used. 
+
 Or if you prefer like this [@Ankenbrand2017 , p.20].
+
 Or: Maybe you prefer like this [@Ankenbrand2017]^[@Ankenbrand2017 , p.420].
 
 
