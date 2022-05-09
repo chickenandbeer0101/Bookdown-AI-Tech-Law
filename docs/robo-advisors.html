@@ -167,8 +167,10 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="3.1" data-path="robo-advisors.html"><a href="robo-advisors.html#ai-driven-process"><i class="fa fa-check"></i><b>3.1</b> AI-driven process<span></span></a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="robo-advisors.html"><a href="robo-advisors.html#pseudocode-of-the-questionnaire-and-the-respectice-scoring"><i class="fa fa-check"></i><b>3.1.1</b> Pseudocode of the questionnaire and the respectice scoring<span></span></a></li>
-<li class="chapter" data-level="3.1.2" data-path="robo-advisors.html"><a href="robo-advisors.html#pseudocode-of-point-scoring-of-the-questionnaire"><i class="fa fa-check"></i><b>3.1.2</b> Pseudocode of point scoring of the questionnaire<span></span></a></li>
+<li class="chapter" data-level="3.1.1" data-path="robo-advisors.html"><a href="robo-advisors.html#risk-categories"><i class="fa fa-check"></i><b>3.1.1</b> Risk categories<span></span></a></li>
+<li class="chapter" data-level="3.1.2" data-path="robo-advisors.html"><a href="robo-advisors.html#questionnaire-and-the-respectivce-scoring"><i class="fa fa-check"></i><b>3.1.2</b> Questionnaire and the respectivce scoring<span></span></a></li>
+<li class="chapter" data-level="3.1.3" data-path="robo-advisors.html"><a href="robo-advisors.html#point-distribution"><i class="fa fa-check"></i><b>3.1.3</b> Point distribution<span></span></a></li>
+<li class="chapter" data-level="3.1.4" data-path="robo-advisors.html"><a href="robo-advisors.html#portfolio-recommendation"><i class="fa fa-check"></i><b>3.1.4</b> Portfolio Recommendation<span></span></a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="robo-advisors.html"><a href="robo-advisors.html#finsa"><i class="fa fa-check"></i><b>3.2</b> FinSA<span></span></a></li>
 <li class="chapter" data-level="3.3" data-path="robo-advisors.html"><a href="robo-advisors.html#fadp"><i class="fa fa-check"></i><b>3.3</b> FADP<span></span></a></li>
@@ -204,115 +206,166 @@ div.csl-indent {
 <p>Consumers and investors are benefiting from both the emergence of new fintech solutions and the further development of existing financial service providers. This has led to a wider range of financial products and services being offered more efficiently and effectively, and companies are under competitive pressure to become more consumer-centric. However, the increasing use of fintech solutions and new technologies also entails risks to which regulators and supervisory authorities are reacting. In this chapter, we aim to analyse the consequences of regulations for startups, whether they are justified, whether they really achieve the desired effect, and ultimately what impact they have on the economy as a whole. To this end, we conducted several interviews with CEOs of fintech companies in Switzerland to get first-hand opinions from those most directly affected by new regulations. Chapter 2 is thus divided into the following subchapters. First, using the example of the adoption of the Financial Services Law (FinSA), which was introduced in 2018 and came into force on January 1, 2020, we analyse the immediate consequences for startups resulting from the implementation of the new regulations. In a second step, which we will later refer to as “Voices from the Industry,” we ask industry professionals what they personally think of new regulations. Specifically, we asked Dr. Adriano Lucatelli, CEO and Co-Founder of Descartes Finance AG, Julian Liniger, CEO and Co-Founder of Relai AG and Rino Borini, leturer at HWZ and co-founder of Scarossa and House of Satoshi.</p>
 <div id="ai-driven-process" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> AI-driven process<a href="robo-advisors.html#ai-driven-process" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A robo-advisor is a digital construct that typically relies on algorithms and/or AI to provide financial advice to clients. Below, we attempt to illustrate the AI-driven process behind the client onboarding process to exemplify how AI is used in practice. We have created a simple pseudocode in the Python language to illustrate the exact mechanism by which the robo-advisor categorizes the client Note that we have only used a very naive questionnaire, which in reality would not comply with the revised FinSA, as we do not distinguish between risk capacity and risk preference. Such similar questionnaires would probably have been encountered several years ago in a similar way with robo-advisors. In order to prevent oversteering of the risk profile, the final score for the risk rating must now be based on the lower of risk capacity and risk preference in order to be compliant with the revised FinSA.</p>
-<div id="pseudocode-of-the-questionnaire-and-the-respectice-scoring" class="section level3 hasAnchor" number="3.1.1">
-<h3><span class="header-section-number">3.1.1</span> Pseudocode of the questionnaire and the respectice scoring<a href="robo-advisors.html#pseudocode-of-the-questionnaire-and-the-respectice-scoring" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="robo-advisors.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Questions</span></span>
-<span id="cb1-2"><a href="robo-advisors.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> RiskProfile(FlaskForm):</span>
-<span id="cb1-3"><a href="robo-advisors.html#cb1-3" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-4"><a href="robo-advisors.html#cb1-4" aria-hidden="true" tabindex="-1"></a>    q1 <span class="op">=</span> RadioField(<span class="st">&quot;1. What is your current age?&quot;</span>, </span>
-<span id="cb1-5"><a href="robo-advisors.html#cb1-5" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> [</span>
-<span id="cb1-6"><a href="robo-advisors.html#cb1-6" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;More than 60&#39;</span>),</span>
-<span id="cb1-7"><a href="robo-advisors.html#cb1-7" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&#39;Between 51 and 60&#39;</span>), </span>
-<span id="cb1-8"><a href="robo-advisors.html#cb1-8" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;Between 41 and 50&#39;</span>), </span>
-<span id="cb1-9"><a href="robo-advisors.html#cb1-9" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;Between 31 and 40&#39;</span>), </span>
-<span id="cb1-10"><a href="robo-advisors.html#cb1-10" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&#39;30 or younger&#39;</span>)])</span>
-<span id="cb1-11"><a href="robo-advisors.html#cb1-11" aria-hidden="true" tabindex="-1"></a>    q2 <span class="op">=</span> RadioField(<span class="st">&quot;2. What is your investment horizon?&quot;</span>, choices <span class="op">=</span> [</span>
-<span id="cb1-12"><a href="robo-advisors.html#cb1-12" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;Within the next year&#39;</span>), </span>
-<span id="cb1-13"><a href="robo-advisors.html#cb1-13" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&#39;2 - 5 years from now&#39;</span>), </span>
-<span id="cb1-14"><a href="robo-advisors.html#cb1-14" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;5 - 10 years from now&#39;</span>), </span>
-<span id="cb1-15"><a href="robo-advisors.html#cb1-15" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;10 - 20 years from now&#39;</span>), </span>
-<span id="cb1-16"><a href="robo-advisors.html#cb1-16" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&#39;More than 20 years from now&#39;</span>)])</span>
-<span id="cb1-17"><a href="robo-advisors.html#cb1-17" aria-hidden="true" tabindex="-1"></a>    q3 <span class="op">=</span> RadioField(<span class="st">&quot;3. If you were to lose your job today, how long will you be able to maintain your current spending life style before you run out of money?&quot;</span>, </span>
-<span id="cb1-18"><a href="robo-advisors.html#cb1-18" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> [</span>
-<span id="cb1-19"><a href="robo-advisors.html#cb1-19" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;1 week&#39;</span>), </span>
-<span id="cb1-20"><a href="robo-advisors.html#cb1-20" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&#39;1 month&#39;</span>), </span>
-<span id="cb1-21"><a href="robo-advisors.html#cb1-21" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;3 months&#39;</span>), </span>
-<span id="cb1-22"><a href="robo-advisors.html#cb1-22" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;6 months or more&#39;</span>), </span>
-<span id="cb1-23"><a href="robo-advisors.html#cb1-23" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&#39;I am already retired&#39;</span>)])</span>
-<span id="cb1-24"><a href="robo-advisors.html#cb1-24" aria-hidden="true" tabindex="-1"></a>    q4 <span class="op">=</span> RadioField(<span class="st">&quot;4. What is your total annual income?&quot;</span>, choices <span class="op">=</span> [</span>
-<span id="cb1-25"><a href="robo-advisors.html#cb1-25" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;Less than CHF 50,000&#39;</span>), </span>
-<span id="cb1-26"><a href="robo-advisors.html#cb1-26" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&#39;CHF 50,000 - CHF 100,000&#39;</span>), </span>
-<span id="cb1-27"><a href="robo-advisors.html#cb1-27" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;CHF 100,000 - CHF 150,000&#39;</span>), </span>
-<span id="cb1-28"><a href="robo-advisors.html#cb1-28" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;CHF 150,000 - CHF 250,000&#39;</span>), </span>
-<span id="cb1-29"><a href="robo-advisors.html#cb1-29" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&#39;More than CHF 250,000&#39;</span>)])</span>
-<span id="cb1-30"><a href="robo-advisors.html#cb1-30" aria-hidden="true" tabindex="-1"></a>    q5 <span class="op">=</span> RadioField(<span class="st">&quot;5. How is the stability of your income.&quot;</span>, </span>
-<span id="cb1-31"><a href="robo-advisors.html#cb1-31" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> [</span>
-<span id="cb1-32"><a href="robo-advisors.html#cb1-32" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;Low&#39;</span>), </span>
-<span id="cb1-33"><a href="robo-advisors.html#cb1-33" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&#39;Below average&#39;</span>), </span>
-<span id="cb1-34"><a href="robo-advisors.html#cb1-34" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;Average&#39;</span>), </span>
-<span id="cb1-35"><a href="robo-advisors.html#cb1-35" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;Above Average&#39;</span>), </span>
-<span id="cb1-36"><a href="robo-advisors.html#cb1-36" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&#39;Very Stable&#39;</span>)])</span>
-<span id="cb1-37"><a href="robo-advisors.html#cb1-37" aria-hidden="true" tabindex="-1"></a>    q6 <span class="op">=</span> RadioField(<span class="st">&quot;6. If you would receive CHF 20,000 today, what would you do?&quot;</span>, </span>
-<span id="cb1-38"><a href="robo-advisors.html#cb1-38" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> [</span>
-<span id="cb1-39"><a href="robo-advisors.html#cb1-39" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;Deposit it in bank account&#39;</span>), </span>
-<span id="cb1-40"><a href="robo-advisors.html#cb1-40" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&#39;Invest only in safe bonds&#39;</span>), </span>
-<span id="cb1-41"><a href="robo-advisors.html#cb1-41" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;Invest in a mix of bonds and stocks&#39;</span>), </span>
-<span id="cb1-42"><a href="robo-advisors.html#cb1-42" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;Invest only in stockss&#39;</span>), </span>
-<span id="cb1-43"><a href="robo-advisors.html#cb1-43" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&#39;Buy a new car&#39;</span>)])</span>
-<span id="cb1-44"><a href="robo-advisors.html#cb1-44" aria-hidden="true" tabindex="-1"></a>    q7 <span class="op">=</span> RadioField(<span class="st">&quot;7. When you think of the word “risk” in a financial context, which of the following words come to mind?&quot;</span>, </span>
-<span id="cb1-45"><a href="robo-advisors.html#cb1-45" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> [</span>
-<span id="cb1-46"><a href="robo-advisors.html#cb1-46" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;Loss&#39;</span>), </span>
-<span id="cb1-47"><a href="robo-advisors.html#cb1-47" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&#39;Dangerous&#39;</span>), </span>
-<span id="cb1-48"><a href="robo-advisors.html#cb1-48" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;Uncertainty&#39;</span>), </span>
-<span id="cb1-49"><a href="robo-advisors.html#cb1-49" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;Opportunity&#39;</span>), </span>
-<span id="cb1-50"><a href="robo-advisors.html#cb1-50" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&#39;Thrill&#39;</span>)])</span>
-<span id="cb1-51"><a href="robo-advisors.html#cb1-51" aria-hidden="true" tabindex="-1"></a>    q8 <span class="op">=</span> RadioField(<span class="st">&quot;8. Which of these statements would best describe your attitudes about the next three years performance of this investment?&quot;</span>, </span>
-<span id="cb1-52"><a href="robo-advisors.html#cb1-52" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> [</span>
-<span id="cb1-53"><a href="robo-advisors.html#cb1-53" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;I need to see a little return&#39;</span>), </span>
-<span id="cb1-54"><a href="robo-advisors.html#cb1-54" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&quot;I&#39;d have a hard time tolerating any losses&quot;</span>), </span>
-<span id="cb1-55"><a href="robo-advisors.html#cb1-55" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;I can tolerate a small loss&#39;</span>), </span>
-<span id="cb1-56"><a href="robo-advisors.html#cb1-56" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;I can tolerate a loss&#39;</span>), </span>
-<span id="cb1-57"><a href="robo-advisors.html#cb1-57" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&quot;I don&#39;t mind a loss at all&quot;</span>)])</span>
-<span id="cb1-58"><a href="robo-advisors.html#cb1-58" aria-hidden="true" tabindex="-1"></a>    q9 <span class="op">=</span> RadioField(<span class="st">&quot;9. Throughout the 2009 financial crisis, the SMI lost 50</span><span class="sc">% o</span><span class="st">f its value. Which of the following would you have done if your portfolio experiences a 50</span><span class="sc">% lo</span><span class="st">ss?&quot;</span>, </span>
-<span id="cb1-59"><a href="robo-advisors.html#cb1-59" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> [</span>
-<span id="cb1-60"><a href="robo-advisors.html#cb1-60" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;Sell all investments&#39;</span>), </span>
-<span id="cb1-61"><a href="robo-advisors.html#cb1-61" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&quot;Move all investments into bonds&quot;</span>), </span>
-<span id="cb1-62"><a href="robo-advisors.html#cb1-62" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;Change to a more conservative allocation&#39;</span>), </span>
-<span id="cb1-63"><a href="robo-advisors.html#cb1-63" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;Hold on to investments&#39;</span>), </span>
-<span id="cb1-64"><a href="robo-advisors.html#cb1-64" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&quot;Investeven  more&quot;</span>)]) </span>
-<span id="cb1-65"><a href="robo-advisors.html#cb1-65" aria-hidden="true" tabindex="-1"></a>    q10 <span class="op">=</span> RadioField(<span class="st">&quot;10. How emotionally comfortable are you with volatility?&quot;</span>, </span>
-<span id="cb1-66"><a href="robo-advisors.html#cb1-66" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> [</span>
-<span id="cb1-67"><a href="robo-advisors.html#cb1-67" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;Plan A&#39;</span>), </span>
-<span id="cb1-68"><a href="robo-advisors.html#cb1-68" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&quot;Plan B&quot;</span>), </span>
-<span id="cb1-69"><a href="robo-advisors.html#cb1-69" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;Plan C&#39;</span>), </span>
-<span id="cb1-70"><a href="robo-advisors.html#cb1-70" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;Plan D&#39;</span>), </span>
-<span id="cb1-71"><a href="robo-advisors.html#cb1-71" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&quot;Plan E&quot;</span>)])</span></code></pre></div>
+<p>A robo-advisor is a digital construct that typically relies on algorithms and/or AI to provide financial advice to clients. Below, we attempt to illustrate the AI-driven process behind the client onboarding process to exemplify how AI is used in practice. We have created several pseudocode’s in the Python language to illustrate the exact mechanism by which the robo-advisor categorizes the client and then finally creates an investment advice. Note that we have only used a very naive questionnaire, which in reality would not comply with the revised FinSA, as we do not distinguish between risk capacity and risk preference as this would be needed to prevent any oversteering of the risk profile. One way to do this would be to count the risk capacity and risk preference scores separately and then use the respective lower score in each case for the final risk category assignment.</p>
+<div id="risk-categories" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Risk categories<a href="robo-advisors.html#risk-categories" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the following exemplary code we define 5 different risk categeories with the respective investment strategy name of which one later the robo-advisor wil assign the client to.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="robo-advisors.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Defining risk categories</span></span>
+<span id="cb1-2"><a href="robo-advisors.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> investment_recommendation(risk_level):</span>
+<span id="cb1-3"><a href="robo-advisors.html#cb1-3" aria-hidden="true" tabindex="-1"></a>    levels <span class="op">=</span> {</span>
+<span id="cb1-4"><a href="robo-advisors.html#cb1-4" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;Conservative&#39;</span>: <span class="st">&#39;80% bonds, 20</span><span class="sc">% e</span><span class="st">quities&#39;</span>,</span>
+<span id="cb1-5"><a href="robo-advisors.html#cb1-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;Balanced&#39;</span>: <span class="st">&#39;60% bonds, 40</span><span class="sc">% e</span><span class="st">quities&#39;</span>,</span>
+<span id="cb1-6"><a href="robo-advisors.html#cb1-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;Growth&#39;</span>: <span class="st">&#39;40% bonds, 60</span><span class="sc">% e</span><span class="st">quities&#39;</span>,</span>
+<span id="cb1-7"><a href="robo-advisors.html#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;Opportunistic&#39;</span>: <span class="st">&#39;20% bonds, 80</span><span class="sc">% e</span><span class="st">quities&#39;</span>,</span>
+<span id="cb1-8"><a href="robo-advisors.html#cb1-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">&#39;All Equity&#39;</span>: <span class="st">&#39;0% bonds, 100</span><span class="sc">% e</span><span class="st">quities&#39;</span>,</span></code></pre></div>
 </div>
-<div id="pseudocode-of-point-scoring-of-the-questionnaire" class="section level3 hasAnchor" number="3.1.2">
-<h3><span class="header-section-number">3.1.2</span> Pseudocode of point scoring of the questionnaire<a href="robo-advisors.html#pseudocode-of-point-scoring-of-the-questionnaire" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Here, our pseudocode classifies the customer into one of five risk categories based on the total score from the questionnaire.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="robo-advisors.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Traditional Risk Profile </span></span>
-<span id="cb2-2"><a href="robo-advisors.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> new_risk_profile():</span>
-<span id="cb2-3"><a href="robo-advisors.html#cb2-3" aria-hidden="true" tabindex="-1"></a>    form <span class="op">=</span> RiskProfile()</span>
-<span id="cb2-4"><a href="robo-advisors.html#cb2-4" aria-hidden="true" tabindex="-1"></a>    user_form <span class="op">=</span> UserAddFormRisk()</span>
-<span id="cb2-5"><a href="robo-advisors.html#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="robo-advisors.html#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> form.validate_on_submit():</span>
-<span id="cb2-7"><a href="robo-advisors.html#cb2-7" aria-hidden="true" tabindex="-1"></a>        q1 <span class="op">=</span> form.q1.data</span>
-<span id="cb2-8"><a href="robo-advisors.html#cb2-8" aria-hidden="true" tabindex="-1"></a>        q2 <span class="op">=</span> form.q2.data</span>
-<span id="cb2-9"><a href="robo-advisors.html#cb2-9" aria-hidden="true" tabindex="-1"></a>        q3 <span class="op">=</span> form.q3.data</span>
-<span id="cb2-10"><a href="robo-advisors.html#cb2-10" aria-hidden="true" tabindex="-1"></a>        q4 <span class="op">=</span> form.q4.data</span>
-<span id="cb2-11"><a href="robo-advisors.html#cb2-11" aria-hidden="true" tabindex="-1"></a>        q5 <span class="op">=</span> form.q5.data</span>
-<span id="cb2-12"><a href="robo-advisors.html#cb2-12" aria-hidden="true" tabindex="-1"></a>        q6<span class="op">=</span> form.q6.data</span>
-<span id="cb2-13"><a href="robo-advisors.html#cb2-13" aria-hidden="true" tabindex="-1"></a>        q7<span class="op">=</span> form.q7.data</span>
-<span id="cb2-14"><a href="robo-advisors.html#cb2-14" aria-hidden="true" tabindex="-1"></a>        q8 <span class="op">=</span> form.q8.data</span>
-<span id="cb2-15"><a href="robo-advisors.html#cb2-15" aria-hidden="true" tabindex="-1"></a>        q9 <span class="op">=</span> form.q9.data</span>
-<span id="cb2-16"><a href="robo-advisors.html#cb2-16" aria-hidden="true" tabindex="-1"></a>        q10 <span class="op">=</span> form.q10.data</span>
-<span id="cb2-17"><a href="robo-advisors.html#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="robo-advisors.html#cb2-18" aria-hidden="true" tabindex="-1"></a>        answers <span class="op">=</span> [<span class="bu">int</span>(q1), <span class="bu">int</span>(q2), <span class="bu">int</span>(q3), <span class="bu">int</span>(q4), <span class="bu">int</span>(q5), <span class="bu">int</span>(q6), <span class="bu">int</span>(q7), <span class="bu">int</span>(q8), <span class="bu">int</span>(q9), <span class="bu">int</span>(q10)]</span>
-<span id="cb2-19"><a href="robo-advisors.html#cb2-19" aria-hidden="true" tabindex="-1"></a>        Sum <span class="op">=</span> <span class="bu">sum</span>(answers)</span>
-<span id="cb2-20"><a href="robo-advisors.html#cb2-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> Sum <span class="op">&lt;</span> <span class="dv">20</span>:</span>
-<span id="cb2-21"><a href="robo-advisors.html#cb2-21" aria-hidden="true" tabindex="-1"></a>            risk_profile <span class="op">=</span> <span class="st">&quot;Preservation&quot;</span></span>
-<span id="cb2-22"><a href="robo-advisors.html#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> Sum <span class="op">&gt;=</span> <span class="dv">20</span> <span class="kw">and</span> Sum <span class="op">&lt;</span> <span class="dv">40</span>:</span>
-<span id="cb2-23"><a href="robo-advisors.html#cb2-23" aria-hidden="true" tabindex="-1"></a>            risk_profile <span class="op">=</span> <span class="st">&quot;Konservativ&quot;</span></span>
-<span id="cb2-24"><a href="robo-advisors.html#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> Sum <span class="op">&gt;=</span> <span class="dv">40</span> <span class="kw">and</span> Sum <span class="op">&lt;</span> <span class="dv">60</span>:</span>
-<span id="cb2-25"><a href="robo-advisors.html#cb2-25" aria-hidden="true" tabindex="-1"></a>            risk_profile <span class="op">=</span> <span class="st">&quot;Ausgewogen&quot;</span></span>
-<span id="cb2-26"><a href="robo-advisors.html#cb2-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> Sum <span class="op">&gt;=</span> <span class="dv">60</span> <span class="kw">and</span> Sum <span class="op">&lt;=</span> <span class="dv">80</span>:</span>
-<span id="cb2-27"><a href="robo-advisors.html#cb2-27" aria-hidden="true" tabindex="-1"></a>            risk_profile <span class="op">=</span> <span class="st">&quot;Wachstum&quot;</span></span>
-<span id="cb2-28"><a href="robo-advisors.html#cb2-28" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb2-29"><a href="robo-advisors.html#cb2-29" aria-hidden="true" tabindex="-1"></a>            risk_profile <span class="op">=</span> <span class="st">&quot;All Equity&quot;</span></span>
-<span id="cb2-30"><a href="robo-advisors.html#cb2-30" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb2-31"><a href="robo-advisors.html#cb2-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> render_template(<span class="st">&#39;results.html&#39;</span>, risk_profile<span class="op">=</span>risk_profile)</span></code></pre></div>
+<div id="questionnaire-and-the-respectivce-scoring" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Questionnaire and the respectivce scoring<a href="robo-advisors.html#questionnaire-and-the-respectivce-scoring" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>What we are currently seeing in the robo-advisor space is that questionnaires are generally being shortened to make it even more attractive for new clients to start investing. On the other hand, enough questions need to be asked to correctly identify the client’s risk capacity and risk preference in order to comply with regulations such as the FIDLEG. For simplicity, we have included 10 questions in the following pseudocode.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="robo-advisors.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Questions</span></span>
+<span id="cb2-2"><a href="robo-advisors.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> risk_profile(FlaskForm):</span>
+<span id="cb2-3"><a href="robo-advisors.html#cb2-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-4"><a href="robo-advisors.html#cb2-4" aria-hidden="true" tabindex="-1"></a>    q1 <span class="op">=</span> RadioField(<span class="st">&quot;1. What is your current age?&quot;</span>, </span>
+<span id="cb2-5"><a href="robo-advisors.html#cb2-5" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> [</span>
+<span id="cb2-6"><a href="robo-advisors.html#cb2-6" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;More than 60&#39;</span>),</span>
+<span id="cb2-7"><a href="robo-advisors.html#cb2-7" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&#39;Between 51 and 60&#39;</span>), </span>
+<span id="cb2-8"><a href="robo-advisors.html#cb2-8" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;Between 41 and 50&#39;</span>), </span>
+<span id="cb2-9"><a href="robo-advisors.html#cb2-9" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;Between 31 and 40&#39;</span>), </span>
+<span id="cb2-10"><a href="robo-advisors.html#cb2-10" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&#39;30 or younger&#39;</span>)])</span>
+<span id="cb2-11"><a href="robo-advisors.html#cb2-11" aria-hidden="true" tabindex="-1"></a>    q2 <span class="op">=</span> RadioField(<span class="st">&quot;2. What is your investment horizon?&quot;</span>, choices <span class="op">=</span> [</span>
+<span id="cb2-12"><a href="robo-advisors.html#cb2-12" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;Within the next year&#39;</span>), </span>
+<span id="cb2-13"><a href="robo-advisors.html#cb2-13" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&#39;2 - 5 years&#39;</span>), </span>
+<span id="cb2-14"><a href="robo-advisors.html#cb2-14" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;5 - 10 years&#39;</span>), </span>
+<span id="cb2-15"><a href="robo-advisors.html#cb2-15" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;10 - 20 years&#39;</span>), </span>
+<span id="cb2-16"><a href="robo-advisors.html#cb2-16" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&#39;More than 20 years&#39;</span>)])</span>
+<span id="cb2-17"><a href="robo-advisors.html#cb2-17" aria-hidden="true" tabindex="-1"></a>    q3 <span class="op">=</span> RadioField(<span class="st">&quot;3. If you were to lose your job today, how long will you be able to maintain your current spending life style?&quot;</span>, </span>
+<span id="cb2-18"><a href="robo-advisors.html#cb2-18" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> [</span>
+<span id="cb2-19"><a href="robo-advisors.html#cb2-19" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;1 week&#39;</span>), </span>
+<span id="cb2-20"><a href="robo-advisors.html#cb2-20" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&#39;1 month&#39;</span>), </span>
+<span id="cb2-21"><a href="robo-advisors.html#cb2-21" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;3 months&#39;</span>), </span>
+<span id="cb2-22"><a href="robo-advisors.html#cb2-22" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;6 months or more&#39;</span>), </span>
+<span id="cb2-23"><a href="robo-advisors.html#cb2-23" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&#39;I am already retired&#39;</span>)])</span>
+<span id="cb2-24"><a href="robo-advisors.html#cb2-24" aria-hidden="true" tabindex="-1"></a>    q4 <span class="op">=</span> RadioField(<span class="st">&quot;4. What is your total annual income?&quot;</span>, choices <span class="op">=</span> [</span>
+<span id="cb2-25"><a href="robo-advisors.html#cb2-25" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;Less than CHF 50,000&#39;</span>), </span>
+<span id="cb2-26"><a href="robo-advisors.html#cb2-26" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&#39;CHF 50,000 - CHF 100,000&#39;</span>), </span>
+<span id="cb2-27"><a href="robo-advisors.html#cb2-27" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;CHF 100,000 - CHF 150,000&#39;</span>), </span>
+<span id="cb2-28"><a href="robo-advisors.html#cb2-28" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;CHF 150,000 - CHF 250,000&#39;</span>), </span>
+<span id="cb2-29"><a href="robo-advisors.html#cb2-29" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&#39;More than CHF 250,000&#39;</span>)])</span>
+<span id="cb2-30"><a href="robo-advisors.html#cb2-30" aria-hidden="true" tabindex="-1"></a>    q5 <span class="op">=</span> RadioField(<span class="st">&quot;5. How is the stability of your income.&quot;</span>, </span>
+<span id="cb2-31"><a href="robo-advisors.html#cb2-31" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> [</span>
+<span id="cb2-32"><a href="robo-advisors.html#cb2-32" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;Low&#39;</span>), </span>
+<span id="cb2-33"><a href="robo-advisors.html#cb2-33" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&#39;Below average&#39;</span>), </span>
+<span id="cb2-34"><a href="robo-advisors.html#cb2-34" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;Average&#39;</span>), </span>
+<span id="cb2-35"><a href="robo-advisors.html#cb2-35" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;Above Average&#39;</span>), </span>
+<span id="cb2-36"><a href="robo-advisors.html#cb2-36" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&#39;Very Stable&#39;</span>)])</span>
+<span id="cb2-37"><a href="robo-advisors.html#cb2-37" aria-hidden="true" tabindex="-1"></a>    q6 <span class="op">=</span> RadioField(<span class="st">&quot;6. If you would receive CHF 20,000 today, what would you do?&quot;</span>, </span>
+<span id="cb2-38"><a href="robo-advisors.html#cb2-38" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> [</span>
+<span id="cb2-39"><a href="robo-advisors.html#cb2-39" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;Deposit it in bank account&#39;</span>), </span>
+<span id="cb2-40"><a href="robo-advisors.html#cb2-40" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&#39;Invest only in safe bonds&#39;</span>), </span>
+<span id="cb2-41"><a href="robo-advisors.html#cb2-41" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;Invest in a mix of bonds and stocks&#39;</span>), </span>
+<span id="cb2-42"><a href="robo-advisors.html#cb2-42" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;Invest only in stockss&#39;</span>), </span>
+<span id="cb2-43"><a href="robo-advisors.html#cb2-43" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&#39;Buy a new car&#39;</span>)])</span>
+<span id="cb2-44"><a href="robo-advisors.html#cb2-44" aria-hidden="true" tabindex="-1"></a>    q7 <span class="op">=</span> RadioField(<span class="st">&quot;7. When you think of the word “risk” in a financial context, which of the following words come to mind?&quot;</span>, </span>
+<span id="cb2-45"><a href="robo-advisors.html#cb2-45" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> [</span>
+<span id="cb2-46"><a href="robo-advisors.html#cb2-46" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;Loss&#39;</span>), </span>
+<span id="cb2-47"><a href="robo-advisors.html#cb2-47" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&#39;Dangerous&#39;</span>), </span>
+<span id="cb2-48"><a href="robo-advisors.html#cb2-48" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;Uncertainty&#39;</span>), </span>
+<span id="cb2-49"><a href="robo-advisors.html#cb2-49" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;Opportunity&#39;</span>), </span>
+<span id="cb2-50"><a href="robo-advisors.html#cb2-50" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&#39;Thrill&#39;</span>)])</span>
+<span id="cb2-51"><a href="robo-advisors.html#cb2-51" aria-hidden="true" tabindex="-1"></a>    q8 <span class="op">=</span> RadioField(<span class="st">&quot;8. Which of these statements would best describe your attitudes about the next three years performance of this investment?&quot;</span>, </span>
+<span id="cb2-52"><a href="robo-advisors.html#cb2-52" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> [</span>
+<span id="cb2-53"><a href="robo-advisors.html#cb2-53" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;I need to see a little return&#39;</span>), </span>
+<span id="cb2-54"><a href="robo-advisors.html#cb2-54" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&quot;I&#39;d have a hard time tolerating any losses&quot;</span>), </span>
+<span id="cb2-55"><a href="robo-advisors.html#cb2-55" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;I can tolerate a small loss&#39;</span>), </span>
+<span id="cb2-56"><a href="robo-advisors.html#cb2-56" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;I can tolerate a loss&#39;</span>), </span>
+<span id="cb2-57"><a href="robo-advisors.html#cb2-57" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&quot;I don&#39;t mind a loss at all&quot;</span>)])</span>
+<span id="cb2-58"><a href="robo-advisors.html#cb2-58" aria-hidden="true" tabindex="-1"></a>    q9 <span class="op">=</span> RadioField(<span class="st">&quot;9. Throughout the 2009 financial crisis, the SMI lost 50</span><span class="sc">% o</span><span class="st">f its value. Which of the following would you have done if your portfolio experiences a 50</span><span class="sc">% lo</span><span class="st">ss?&quot;</span>, </span>
+<span id="cb2-59"><a href="robo-advisors.html#cb2-59" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> [</span>
+<span id="cb2-60"><a href="robo-advisors.html#cb2-60" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;Sell all investments&#39;</span>), </span>
+<span id="cb2-61"><a href="robo-advisors.html#cb2-61" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&quot;Move all investments into bonds&quot;</span>), </span>
+<span id="cb2-62"><a href="robo-advisors.html#cb2-62" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;Change to a more conservative allocation&#39;</span>), </span>
+<span id="cb2-63"><a href="robo-advisors.html#cb2-63" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;Hold on to investments&#39;</span>), </span>
+<span id="cb2-64"><a href="robo-advisors.html#cb2-64" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&quot;Investeven  more&quot;</span>)]) </span>
+<span id="cb2-65"><a href="robo-advisors.html#cb2-65" aria-hidden="true" tabindex="-1"></a>    q10 <span class="op">=</span> RadioField(<span class="st">&quot;10. How emotionally comfortable are you with volatility?&quot;</span>, </span>
+<span id="cb2-66"><a href="robo-advisors.html#cb2-66" aria-hidden="true" tabindex="-1"></a>    choices <span class="op">=</span> [</span>
+<span id="cb2-67"><a href="robo-advisors.html#cb2-67" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;0&#39;</span>, <span class="st">&#39;Plan A&#39;</span>), </span>
+<span id="cb2-68"><a href="robo-advisors.html#cb2-68" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;2&#39;</span>, <span class="st">&quot;Plan B&quot;</span>), </span>
+<span id="cb2-69"><a href="robo-advisors.html#cb2-69" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;5&#39;</span>, <span class="st">&#39;Plan C&#39;</span>), </span>
+<span id="cb2-70"><a href="robo-advisors.html#cb2-70" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;8&#39;</span>, <span class="st">&#39;Plan D&#39;</span>), </span>
+<span id="cb2-71"><a href="robo-advisors.html#cb2-71" aria-hidden="true" tabindex="-1"></a>      (<span class="st">&#39;10&#39;</span>, <span class="st">&quot;Plan E&quot;</span>)])</span></code></pre></div>
+</div>
+<div id="point-distribution" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Point distribution<a href="robo-advisors.html#point-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Here, our pseudocode classifies the customer into one of five risk categories based on the total score from the questionnaire above.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="robo-advisors.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Traditional Risk Profile </span></span>
+<span id="cb3-2"><a href="robo-advisors.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> new_risk_profile():</span>
+<span id="cb3-3"><a href="robo-advisors.html#cb3-3" aria-hidden="true" tabindex="-1"></a>    form <span class="op">=</span> risk_profile()</span>
+<span id="cb3-4"><a href="robo-advisors.html#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="robo-advisors.html#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> form.validate_on_submit():</span>
+<span id="cb3-6"><a href="robo-advisors.html#cb3-6" aria-hidden="true" tabindex="-1"></a>        q1 <span class="op">=</span> form.q1.data</span>
+<span id="cb3-7"><a href="robo-advisors.html#cb3-7" aria-hidden="true" tabindex="-1"></a>        q2 <span class="op">=</span> form.q2.data</span>
+<span id="cb3-8"><a href="robo-advisors.html#cb3-8" aria-hidden="true" tabindex="-1"></a>        q3 <span class="op">=</span> form.q3.data</span>
+<span id="cb3-9"><a href="robo-advisors.html#cb3-9" aria-hidden="true" tabindex="-1"></a>        q4 <span class="op">=</span> form.q4.data</span>
+<span id="cb3-10"><a href="robo-advisors.html#cb3-10" aria-hidden="true" tabindex="-1"></a>        q5 <span class="op">=</span> form.q5.data</span>
+<span id="cb3-11"><a href="robo-advisors.html#cb3-11" aria-hidden="true" tabindex="-1"></a>        q6<span class="op">=</span> form.q6.data</span>
+<span id="cb3-12"><a href="robo-advisors.html#cb3-12" aria-hidden="true" tabindex="-1"></a>        q7<span class="op">=</span> form.q7.data</span>
+<span id="cb3-13"><a href="robo-advisors.html#cb3-13" aria-hidden="true" tabindex="-1"></a>        q8 <span class="op">=</span> form.q8.data</span>
+<span id="cb3-14"><a href="robo-advisors.html#cb3-14" aria-hidden="true" tabindex="-1"></a>        q9 <span class="op">=</span> form.q9.data</span>
+<span id="cb3-15"><a href="robo-advisors.html#cb3-15" aria-hidden="true" tabindex="-1"></a>        q10 <span class="op">=</span> form.q10.data</span>
+<span id="cb3-16"><a href="robo-advisors.html#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="robo-advisors.html#cb3-17" aria-hidden="true" tabindex="-1"></a>        answers <span class="op">=</span> [<span class="bu">int</span>(q1), <span class="bu">int</span>(q2), <span class="bu">int</span>(q3), <span class="bu">int</span>(q4), <span class="bu">int</span>(q5), <span class="bu">int</span>(q6), <span class="bu">int</span>(q7), <span class="bu">int</span>(q8), <span class="bu">int</span>(q9), <span class="bu">int</span>(q10)]</span>
+<span id="cb3-18"><a href="robo-advisors.html#cb3-18" aria-hidden="true" tabindex="-1"></a>        Sum <span class="op">=</span> <span class="bu">sum</span>(answers)</span>
+<span id="cb3-19"><a href="robo-advisors.html#cb3-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> Sum <span class="op">&lt;</span> <span class="dv">20</span>:</span>
+<span id="cb3-20"><a href="robo-advisors.html#cb3-20" aria-hidden="true" tabindex="-1"></a>            risk_profile <span class="op">=</span> <span class="st">&quot;Conservative&quot;</span></span>
+<span id="cb3-21"><a href="robo-advisors.html#cb3-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> Sum <span class="op">&gt;=</span> <span class="dv">20</span> <span class="kw">and</span> Sum <span class="op">&lt;</span> <span class="dv">40</span>:</span>
+<span id="cb3-22"><a href="robo-advisors.html#cb3-22" aria-hidden="true" tabindex="-1"></a>            risk_profile <span class="op">=</span> <span class="st">&quot;Balanced&quot;</span></span>
+<span id="cb3-23"><a href="robo-advisors.html#cb3-23" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> Sum <span class="op">&gt;=</span> <span class="dv">40</span> <span class="kw">and</span> Sum <span class="op">&lt;</span> <span class="dv">60</span>:</span>
+<span id="cb3-24"><a href="robo-advisors.html#cb3-24" aria-hidden="true" tabindex="-1"></a>            risk_profile <span class="op">=</span> <span class="st">&quot;Growth&quot;</span></span>
+<span id="cb3-25"><a href="robo-advisors.html#cb3-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> Sum <span class="op">&gt;=</span> <span class="dv">60</span> <span class="kw">and</span> Sum <span class="op">&lt;=</span> <span class="dv">80</span>:</span>
+<span id="cb3-26"><a href="robo-advisors.html#cb3-26" aria-hidden="true" tabindex="-1"></a>            risk_profile <span class="op">=</span> <span class="st">&quot;Opportunistic&quot;</span></span>
+<span id="cb3-27"><a href="robo-advisors.html#cb3-27" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb3-28"><a href="robo-advisors.html#cb3-28" aria-hidden="true" tabindex="-1"></a>            risk_profile <span class="op">=</span> <span class="st">&quot;All Equity&quot;</span></span>
+<span id="cb3-29"><a href="robo-advisors.html#cb3-29" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb3-30"><a href="robo-advisors.html#cb3-30" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> render_template(<span class="st">&#39;results.html&#39;</span>, risk_profile<span class="op">=</span>risk_profile)</span></code></pre></div>
+</div>
+<div id="portfolio-recommendation" class="section level3 hasAnchor" number="3.1.4">
+<h3><span class="header-section-number">3.1.4</span> Portfolio Recommendation<a href="robo-advisors.html#portfolio-recommendation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>And finally, in this part, we naively illustrate how the robo-advisor would recommend an investment strategy to the client based on the answers to the questionnaire.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="robo-advisors.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Final Recommendation</span></span>
+<span id="cb4-2"><a href="robo-advisors.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> portfolio_recommendation(intent_request):</span>
+<span id="cb4-3"><a href="robo-advisors.html#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="robo-advisors.html#cb4-4" aria-hidden="true" tabindex="-1"></a>    first_name <span class="op">=</span> get_slots(intent_request)[<span class="st">&quot;firstName&quot;</span>]</span>
+<span id="cb4-5"><a href="robo-advisors.html#cb4-5" aria-hidden="true" tabindex="-1"></a>    age <span class="op">=</span> get_slots(intent_request)[<span class="st">&quot;age&quot;</span>]</span>
+<span id="cb4-6"><a href="robo-advisors.html#cb4-6" aria-hidden="true" tabindex="-1"></a>    investment_amount <span class="op">=</span> get_slots(intent_request)[<span class="st">&quot;investmentAmount&quot;</span>]</span>
+<span id="cb4-7"><a href="robo-advisors.html#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="robo-advisors.html#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> source <span class="op">==</span> <span class="st">&quot;DialogCodeHook&quot;</span>:</span>
+<span id="cb4-9"><a href="robo-advisors.html#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="robo-advisors.html#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> age <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb4-11"><a href="robo-advisors.html#cb4-11" aria-hidden="true" tabindex="-1"></a>            age <span class="op">=</span> parse_int(age)</span>
+<span id="cb4-12"><a href="robo-advisors.html#cb4-12" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb4-13"><a href="robo-advisors.html#cb4-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> age <span class="op">&lt;</span><span class="dv">18</span>:</span>
+<span id="cb4-14"><a href="robo-advisors.html#cb4-14" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> build_validation_result(<span class="va">False</span>, <span class="st">&quot;Your need to be at least 18 years old to use our service&quot;</span>)</span>
+<span id="cb4-15"><a href="robo-advisors.html#cb4-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> age <span class="op">&gt;=</span><span class="dv">65</span>:</span>
+<span id="cb4-16"><a href="robo-advisors.html#cb4-16" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> build_validation_result(<span class="va">False</span>, <span class="st">&quot;You must not be retired yet&quot;</span>)</span>
+<span id="cb4-17"><a href="robo-advisors.html#cb4-17" aria-hidden="true" tabindex="-1"></a>       </span>
+<span id="cb4-18"><a href="robo-advisors.html#cb4-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> investment_amount <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb4-19"><a href="robo-advisors.html#cb4-19" aria-hidden="true" tabindex="-1"></a>            investment_amount <span class="op">=</span> parse_int(investment_amount)</span>
+<span id="cb4-20"><a href="robo-advisors.html#cb4-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> investment_amount <span class="op">&lt;</span> <span class="dv">5000</span>:</span>
+<span id="cb4-21"><a href="robo-advisors.html#cb4-21" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> build_validation_result(<span class="va">False</span>,<span class="st">&quot;The minimum investment amount is CHF 5000&quot;</span>)</span>
+<span id="cb4-22"><a href="robo-advisors.html#cb4-22" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb4-23"><a href="robo-advisors.html#cb4-23" aria-hidden="true" tabindex="-1"></a>                initial_recommendation <span class="op">=</span> new_risk_profile</span>
+<span id="cb4-24"><a href="robo-advisors.html#cb4-24" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> close(</span>
+<span id="cb4-25"><a href="robo-advisors.html#cb4-25" aria-hidden="true" tabindex="-1"></a>        intent_request[<span class="st">&quot;sessionAttributes&quot;</span>],</span>
+<span id="cb4-26"><a href="robo-advisors.html#cb4-26" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Fulfilled&quot;</span>,</span>
+<span id="cb4-27"><a href="robo-advisors.html#cb4-27" aria-hidden="true" tabindex="-1"></a>        {</span>
+<span id="cb4-28"><a href="robo-advisors.html#cb4-28" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;contentType&quot;</span>: <span class="st">&quot;PlainText&quot;</span>,</span>
+<span id="cb4-29"><a href="robo-advisors.html#cb4-29" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;content&quot;</span>: <span class="st">&quot;&quot;&quot;</span><span class="sc">{}</span><span class="st"> thank you for your information;</span></span>
+<span id="cb4-30"><a href="robo-advisors.html#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="st">            Based on your answers, our recommendation is to choose the </span><span class="sc">{}</span><span class="st"> investment portfolio</span></span>
+<span id="cb4-31"><a href="robo-advisors.html#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="st">            &quot;&quot;&quot;</span>.<span class="bu">format</span>(</span>
+<span id="cb4-32"><a href="robo-advisors.html#cb4-32" aria-hidden="true" tabindex="-1"></a>                first_name, initial_recommendation</span>
+<span id="cb4-33"><a href="robo-advisors.html#cb4-33" aria-hidden="true" tabindex="-1"></a>            ),</span>
+<span id="cb4-34"><a href="robo-advisors.html#cb4-34" aria-hidden="true" tabindex="-1"></a>        },</span>
+<span id="cb4-35"><a href="robo-advisors.html#cb4-35" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div>
 </div>
 </div>
 <div id="finsa" class="section level2 hasAnchor" number="3.2">

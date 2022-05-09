@@ -3,8 +3,10 @@ introduction
 citation-and-footnotes-check
 robo-advisors
 ai-driven-process
-pseudocode-of-the-questionnaire-and-the-respectice-scoring
-pseudocode-of-point-scoring-of-the-questionnaire
+risk-categories
+questionnaire-and-the-respectivce-scoring
+point-distribution
+portfolio-recommendation
 finsa
 fadp
 voices-from-the-industry
