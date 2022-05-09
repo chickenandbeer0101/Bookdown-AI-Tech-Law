@@ -186,7 +186,7 @@ The FinSa primarily regulates how financial services must be provided and how fi
 
 > "Regulation should primarily try to prevent macroeconomic financial shocks, not regulate every single process in the financial industry."
 >
-> --- Dr. Adriano Lucatelli
+> -- Dr. Adriano Lucatelli
 
 In Switzerland, WealthTechs are in principle subject to the same regulations as traditional financial institutions. These regulations are extensive, creating significant barriers to entry for WealthTechs. However, many of the WealthTechs in Switzerland are based on artificial intelligence (as is Descartes Finance AG), which in theory eliminates human bias in wealth management and allows wealth managers to focus on relationship building. While these tighter regulations may be necessary for traditional wealth management, for WealthTech’s they do not improve processes or client protection, and instead simply increase the cost of doing business. In practice, WealthTech’s, which were supposed to revolutionize wealth management, compete with large financial institutions like UBS and Credit Suisse. 
 As an example, the newly introduced FinSa did not contribute significantly to customer protection, but only increased the cost of compliance for the startup, which in turn consumed money that could have been used elsewhere to innovate the services and products offered, so Lucatelli. Ultimately, all these new regulations won't do much but rather hinder innovation, Lucatelli says.
