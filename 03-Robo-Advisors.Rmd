@@ -15,13 +15,13 @@ def investment_recommendation():
             'Balanced': '60% bonds, 40% equities',
             'Growth': '40% bonds, 60% equities',
             'Opportunistic': '20% bonds, 80% equities',
-            'All Equity': '0% bonds, 100% equities',
-            
+            'All Equity': '0% bonds, 100% equities',      
+    }   
 ```
 
-
 ### Questionnaire and the respectivce scoring
-What we are currently seeing in the robo-advisor industry is that questionnaires are generally being shortened to make it even more attractive for new clients to start investing. On the other hand, enough questions need to be asked to correctly identify the client's risk capacity and risk preference in order to comply with regulations such as the FIDLEG. For simplicity, we have included 10 questions in the following pseudocode.
+What we are currently seeing in the robo-advisor industry is that questionnaires are generally being shortened to make it even more attractive for new clients to start investing. On the other hand, enough questions need to be asked to correctly identify the client's risk capacity and risk preference in order to comply with regulations such as the FIDLEG. For simplicity, we have included 10 questions in the following pseudocode, which are inspired from several leading Swiss robo-advisors.
+
 ```{python eval=FALSE}
 # Questions
 class risk_profile(FlaskForm):
