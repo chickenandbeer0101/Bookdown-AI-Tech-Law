@@ -2,7 +2,7 @@
 Consumers and investors are benefiting from both the emergence of new fintech solutions and the further development of existing financial service providers. This has led to a wider range of financial products and services being offered more efficiently and effectively, and companies are under competitive pressure to become more consumer-centric. However, the increasing use of fintech solutions and new technologies also entails risks to which regulators and supervisory authorities are reacting. In this chapter, we will first discuss and illustrate some AI-driven processes in the robo-advisory industry and illustrate the mechanism using pseudocodes to give the reader an understanding of how AI is driving this industry and, in some selected cases, also help develop a better understanding of which areas are affected by regulatory changes in practice. We then set out to analyze the impact of the regulations on startups, whether they are justified, whether they are really having the desired effect, and ultimately what impact they are having on the economy as a whole. To this end, we conducted several interviews with CEOs of fintech companies in Switzerland to obtain first-hand opinions from those most directly affected by the new regulations. Finally, we summarize these interviews in the last subchapter, which we will later refer to as "Voices from the Industry", where we ask Dr. Adriano Lucatelli, CEO and co-founder of Descartes Finance AG, Julian Liniger, CEO and co-founder of Relai AG, and Rino Borini, lecturer at HWZ and co-founder of Scarossa and House of Satosh, about their personal opinion of new regulations
 
 
-## AI-driven process
+## AI-driven Process
 A robo-advisor is a digital construct that typically relies on algorithms and/or AI to provide financial advice to clients. Below, we attempt to illustrate some of the AI-driven process of robo-advisors to exemplify how AI is used in practice. We have created several pseudocode's in the Python language to illustrate the exact mechanism by which the robo-advisor categorizes the client and then finally creates an investment advice. Note that we have only used a very naive questionnaire, which in reality would not comply with the revised FinSA, as we do not distinguish between risk capacity and risk preference as this would be needed to prevent any oversteering of the risk profile. One way to do this would be to count the risk capacity and risk preference scores separately and then use the respective lower score in each case for the final risk category assignment. At the end we also included a pseudocode for the rebalancing.
 
 ### Risk categories
@@ -19,7 +19,7 @@ def investment_recommendation():
     }   
 ```
 
-### Questionnaire and the respectivce scoring
+### Questionnaire
 What we are currently seeing in the robo-advisor industry is that questionnaires are generally being shortened to make it even more attractive for new clients to start investing. On the other hand, enough questions need to be asked to correctly identify the client's risk capacity and risk preference in order to comply with regulations such as the FIDLEG. For simplicity, we have included 10 questions in the following pseudocode, which are inspired from several leading Swiss robo-advisors.
 
 ```{python eval=FALSE}
