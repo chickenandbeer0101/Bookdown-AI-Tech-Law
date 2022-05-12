@@ -1,4 +1,5 @@
 abstract
+introduction
 fintechs-in-switzerland
 fintechs-in-switzerland-1
 embed-youtube-videos-with-a-still-frame
