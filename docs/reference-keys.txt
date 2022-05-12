@@ -1,5 +1,6 @@
 abstract
 introduction
+test-citation
 citation-and-footnotes-check
 including-page-numbers-in-citations
 lets-not-add-too-many-subchapters.-it-gets-messy-in-markdown

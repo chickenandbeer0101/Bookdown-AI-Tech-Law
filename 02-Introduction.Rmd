@@ -1,6 +1,13 @@
 # Introduction
 
 
+## Test Citation
+
+FinTech is a portmanteau for the words “Financial” and “Technology” and is used to describe “technology-based solutions for innovative digital products, services and processes in the financial sector”^[Fintech in Switzerland: Fewer companies, more volume2022]. FinTech companies usually distinguish themselves from traditional financial institutions by taking technologically innovative approaches to complement or replace financial services. 
+
+
+
+
 ## Citation and Footnotes Check
 We will create footnotes for **Articles** like so.^[Art. 15, FinSA]
 
