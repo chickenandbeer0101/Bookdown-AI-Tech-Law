@@ -32,70 +32,70 @@ What we are currently seeing in the robo-advisor industry is that questionnaires
 
 ```{python eval=FALSE}
 # Questions
-class risk_profile(FlaskForm):
+class risk_profile:
     
-    q1 = RadioField("1. Please enter your age", 
+    q1 = ("1. Please enter your age", 
     choices = [
       ('0', 'More than 60'),
       ('2', 'Between 51 and 60'), 
       ('5', 'Between 41 and 50'), 
       ('8', 'Between 31 and 40'), 
       ('10', '30 or younger')])
-    q2 = RadioField("2. What is your investment horizon?", choices = [
+    q2 = ("2. What is your investment horizon?", choices = [
       ('0', 'Within the next year'), 
       ('2', '2 - 5 years'), 
       ('5', '5 - 10 years'), 
       ('8', '10 - 20 years'), 
       ('10', 'More than 20 years')])
-    q3 = RadioField("3. If you were to lose your job, how long would you be able to finance your current living?", 
+    q3 = ("3. If you were to lose your job, how long would you be able to finance your current living?", 
     choices = [
       ('0', '1 week'), 
       ('2', '1 month'), 
       ('5', '3 months'), 
       ('8', '6 months or more'), 
       ('10', 'I am already retired')])
-    q4 = RadioField("4. What is your total annual income?", choices = [
+    q4 = ("4. What is your total annual income?", choices = [
       ('0', 'Less than CHF 50,000'), 
       ('2', 'CHF 50,000 - CHF 100,000'), 
       ('5', 'CHF 100,000 - CHF 150,000'), 
       ('8', 'CHF 150,000 - CHF 250,000'), 
       ('10', 'More than CHF 250,000')])
-    q5 = RadioField("5. How is the stability of your income", 
+    q5 = ("5. How is the stability of your income", 
     choices = [
       ('0', 'Low'), 
       ('2', 'Below average'), 
       ('5', 'Average'), 
       ('8', 'Above Average'), 
       ('10', 'Very Stable')])
-    q6 = RadioField("6. If you would receive CHF 20,000 today, what would you do?", 
+    q6 = ("6. If you would receive CHF 20,000 today, what would you do?", 
     choices = [
       ('0', 'Deposit it in bank account'), 
       ('2', 'Invest only in safe bonds'), 
       ('5', 'Invest in a mix of bonds and stocks'), 
       ('8', 'Invest only in stockss'), 
       ('10', 'Buy a new car')])
-    q7 = RadioField("7. When you think of the word “risk” in a financial context, which of the following words come to mind?", 
+    q7 = ("7. When you think of the word “risk” in a financial context, which of the following words come to mind?", 
     choices = [
       ('0', 'Loss'), 
       ('2', 'Dangerous'), 
       ('5', 'Uncertainty'), 
       ('8', 'Opportunity'), 
       ('10', 'Thrill')])
-    q8 = RadioField("8. Which of the following statements would best describe your attitude regarding investing?", 
+    q8 = ("8. Which of the following statements would best describe your attitude regarding investing?", 
     choices = [
       ('0', "I need to see a little return"), 
       ('2', "I would have a hard time tolerating any losses"), 
       ('5', "I can tolerate a small loss"), 
       ('8', "I can tolerate a loss"), 
       ('10', "I don't mind a loss at all")])
-    q9 = RadioField("9. Throughout the 2009 financial crisis, the SMI lost 50% of its value. Which of the following would you have done if your portfolio experiences a 50% loss?", 
+    q9 = ("9. Throughout the 2009 financial crisis, the SMI lost 50% of its value. Which of the following would you have done if your portfolio experiences a 50% loss?", 
     choices = [
       ('0', 'Sell all investments'), 
       ('2', "Move all investments into bonds"), 
       ('5', 'Change to a more conservative allocation'), 
       ('8', 'Hold on to investments'), 
       ('10', "Investeven  more")]) 
-    q10 = RadioField("10. As return increases so does risk. Which statement applies to you?", 
+    q10 = ("10. As return increases so does risk. Which statement applies to you?", 
     choices = [
       ('0', "I am not willing to accept any fluctuations in value"), 
       ('2', "I can live with fluctuations between 0% to 5%"), 
@@ -124,7 +124,7 @@ def new_risk_profile():
         q10 = form.q10.data
 
         answers = [int(q1), int(q2), int(q3), int(q4), int(q5), int(q6), int(q7), int(q8), int(q9), int(q10)]
-        Sum = sum(answers)
+
         if Sum < 20:
             risk_profile = "Conservative"
         elif Sum >= 20 and Sum < 40:
@@ -136,7 +136,7 @@ def new_risk_profile():
         else:
             risk_profile = "All Equity"
         
-        return render_template('results.html', risk_profile=risk_profile)
+        return result
 ```
 
 ### Portfolio Recommendation
@@ -145,36 +145,20 @@ Finally, in this part, we naively present how the robo-advisor would recommend a
 # Final Recommendation
 def portfolio_recommendation(intent_request):
 
-    first_name = get_slots(intent_request)["firstName"]
-    age = get_slots(intent_request)["age"]
-    investment_amount = get_slots(intent_request)["investmentAmount"]
+    first_name = ["firstName"]
+    age = ["age"]
+    investment_amount = ["investmentAmount"]
 
-    if age is not None:
-        age = parse_int(age)
-            
-        if age <18:
-            return build_validation_result(False, "Your need to be at least 18 years old to use our service")
-        elif age >=65:
-            return build_validation_result(False, "You must not be retired yet")
+    if age <18:
+        return build_validation_result(False, "You need to be at least 18 years old to use our service")
+    elif age >=65:
+        return build_validation_result(False, "You must not be retired yet")
        
-    if investment_amount is not None:
-        investment_amount = parse_int(investment_amount)
-        if investment_amount < 5000:
-            return build_validation_result(False,"The minimum investment amount is CHF 5'000")
-        else:
-            initial_recommendation = new_risk_profile
-            return close(
-    intent_request["sessionAttributes"],
-        "Fulfilled",
-    {
-        "contentType": "PlainText",
-        "content": """{} thank you for your information;
-        Based on your answers, our recommendation is to choose the {} investment portfolio
-        """.format(
-            first_name, initial_recommendation
-        ),
-    },
-)
+    if investment_amount < 5000:
+        return build_validation_result(False,"The minimum investment amount is CHF 5'000")
+    else:
+        initial_recommendation = new_risk_profile
+        return("Based on your answers, we recommend the" {} "investment portfolio")
     
 ```
 
