@@ -4,17 +4,14 @@
 
 
 
+## AI-driven Processes
+Robo-advisors differ by institution, based on their underlying algorithm. However, their implementation steps are consistently the same. Clients first complete a questionnaire to assess risk tolerance, investment ambition and needs. Based on this information, the robo-advisor builds a diversified portfolio based on an algorithm, a set of predefined rules, created by investment professionals. These investment professionals monitor market signals and ensure that the algorithm is rebalancing the portfolio appropriately^[“Robo-Advisors: An Introduction”, accessed 4 May 2022, https://www.schwab.com/automated-investing/what-is-a-robo-advisor]. 
 
+We have created pseudocode chunks in Python to illustrate the mechanism by which the robo-advisor categorizes the client, assigns a portfolio and rebalances it. Note that we have only used a very naive questionnaire, which in reality would not comply with the revised FinSA, as we do not distinguish between risk capacity and risk preference. This step would be needed to prevent any risk oversteering. In practice, this may be done by using the lowest score between risk capacity and preference for the final risk category assignment. The AI-portfolio attribution process has been highly simplified, with investment strategies consisting of simple bond to equity ratios. 
 
-## AI-driven processes
-Consumers and investors are benefiting from both the emergence of new fintech solutions and the further development of existing financial service providers. This has led to a wider range of financial products and services being offered more efficiently and effectively, and companies are under competitive pressure to become more consumer-centric. However, the increasing use of fintech solutions and new technologies also entails risks to which regulators and supervisory authorities are reacting. In this chapter, we will first discuss and illustrate some AI-driven processes in the robo-advisory industry and illustrate the mechanism using pseudocodes to give the reader an understanding of how AI is driving this industry and, in some selected cases, also help develop a better understanding of which areas are affected by regulatory changes in practice. We then set out to analyze the impact of the regulations on startups, whether they are justified, whether they are really having the desired effect, and ultimately what impact they are having on the economy as a whole. To this end, we conducted several interviews with CEOs of fintech companies in Switzerland to obtain first-hand opinions from those most directly affected by the new regulations. Finally, we summarize these interviews in the last subchapter, which we will later refer to as "Voices from the Industry", where we ask Dr. Adriano Lucatelli, CEO and co-founder of Descartes Finance AG, Julian Liniger, CEO and co-founder of Relai AG, and Rino Borini, lecturer at HWZ and co-founder of Scarossa and House of Satosh, about their personal opinion of new regulations
-
-
-## AI-driven Process
-A robo-advisor is a digital construct that typically relies on algorithms and/or AI to provide financial advice to clients. Below, we attempt to illustrate some of the AI-driven process of robo-advisors to exemplify how AI is used in practice. We have created several pseudocode's in the Python language to illustrate the exact mechanism by which the robo-advisor categorizes the client and then finally creates an investment advice. Note that we have only used a very naive questionnaire, which in reality would not comply with the revised FinSA, as we do not distinguish between risk capacity and risk preference as this would be needed to prevent any oversteering of the risk profile. One way to do this would be to count the risk capacity and risk preference scores separately and then use the respective lower score in each case for the final risk category assignment. At the end we also included a pseudocode for the rebalancing.
 
 ### Risk categories
-In the following exemplary code we define 5 different risk categeories with the respective investment strategy name of which one later the robo-advisor wil assign the client to.
+First, 5 risk categories are defined. Each one corresponds to an investment strategy that the client will be assigned to by the robo-advisor. 
 ```{python eval=FALSE}
 # Defining risk categories
 def investment_recommendation():
@@ -28,7 +25,7 @@ def investment_recommendation():
 ```
 
 ### Questionnaire
-What we are currently seeing in the robo-advisor industry is that questionnaires are generally being shortened to make it even more attractive for new clients to start investing. On the other hand, enough questions need to be asked to correctly identify the client's risk capacity and risk preference in order to comply with regulations such as the FIDLEG. For simplicity, we have included 10 questions in the following pseudocode, which are inspired from several leading Swiss robo-advisors.
+Current trends in the robo-advisory industry show questionnaires are generally being shortened to make robo-advisory solutions more attractive to new clients. However, enough questions need to be asked to correctly identify the client’s risk capacity and risk preference and to comply with regulations such as the FinSA. For simplicity, we have included 10 questions in the following pseudocode, which are inspired by several leading Swiss robo-advisors^[We looked at the questionnaire of, among others, Descartes Finance AG, True Wealth and Inyova].
 
 ```{python eval=FALSE}
 # Questions
@@ -105,66 +102,49 @@ class risk_profile:
 ```
 
 ### Point distribution
-Here, our pseudocode classifies the customer into one of five risk categories based on the total score from the questionnaire above.
+After collecting the relevant client information and attributing a score, the robo-advisor classifies the customer into one of five risk categories. 
 ```{python eval=FALSE}
 # Traditional Risk Profile 
 def new_risk_profile():
     form = risk_profile()
 
-    if form.validate_on_submit():
-        q1 = form.q1.data
-        q2 = form.q2.data
-        q3 = form.q3.data
-        q4 = form.q4.data
-        q5 = form.q5.data
-        q6= form.q6.data
-        q7= form.q7.data
-        q8 = form.q8.data
-        q9 = form.q9.data
-        q10 = form.q10.data
-
-        answers = [int(q1), int(q2), int(q3), int(q4), int(q5), int(q6), int(q7), int(q8), int(q9), int(q10)]
-
-        if Sum < 20:
-            risk_profile = "Conservative"
-        elif Sum >= 20 and Sum < 40:
-            risk_profile = "Balanced"
-        elif Sum >= 40 and Sum < 60:
-            risk_profile = "Growth"
-        elif Sum >= 60 and Sum <= 80:
-            risk_profile = "Opportunistic"
-        else:
-            risk_profile = "All Equity"
+    if Sum < 20:
+        risk_profile = "Conservative"
+    elif Sum >= 20 and Sum < 40:
+        risk_profile = "Balanced"
+    elif Sum >= 40 and Sum < 60:
+        risk_profile = "Growth"
+    elif Sum >= 60 and Sum <= 80:
+        risk_profile = "Opportunistic"
+    else:
+        risk_profile = "All Equity"
         
-        return result
+    return result
 ```
 
 ### Portfolio Recommendation
-Finally, in this part, we naively present how the robo-advisor would recommend an investment strategy to the client based on the answers given to the questionnaire. We added two requirements: First, the client must be at least 18 years old and not yet retired to become a client with our company. Second, the minimum investment amount is CHF 5,000; a lower amount would simply not be interesting for us from an economic point of view. We have also added a small feature that allows the algorithm to automatically combine our recommended investment portfolio if the above two requirements are met.
+Finally, in this part, we naively present how the robo-advisor would recommend an investment strategy to the client based on the answers given to the questionnaire. We added two requirements: First, the client must be at least 18 years old and not yet retired to become a client with our company. Second, the minimum investment amount is CHF 5,000; a lower amount would simply not be interesting for us from an economic point of view. One should note that these investment strategies are, in practice, the fruit of careful optimization algorithms based on (in the case of Switzerland) SMI stocks and bonds and/or ETFs. 
 ```{python eval=FALSE}
 # Final Recommendation
-def portfolio_recommendation(intent_request):
+def portfolio_recommendation():
 
-    first_name = ["firstName"]
-    age = ["age"]
-    investment_amount = ["investmentAmount"]
+    first_name = ["First_Name"]
+    age = ["Age"]
+    investment_amount = ["Investment_Amount"]
 
-    if age <18:
-        return build_validation_result(False, "You need to be at least 18 years old to use our service")
-    elif age >=65:
-        return build_validation_result(False, "You must not be retired yet")
+    if age < 18:
+        return build_validation_result("You need to be at least 18 years old to use our service")
+    elif age >= 65:
+        return build_validation_result("You must not be retired yet")
        
     if investment_amount < 5000:
-        return build_validation_result(False,"The minimum investment amount is CHF 5'000")
-    else:
-        initial_recommendation = new_risk_profile
-        return("Based on your answers, we recommend the" {} "investment portfolio")
+        return build_validation_result("The minimum investment amount is CHF 5'000")
     
 ```
 
 
 ### Rebalancing
-In this small code section, we want to touch on another AI-driven process within Robo-Advisory: the rebalancing process. As the economy is constantly changing, so is the stock market and the respective stock prices. In order to keep the risk level constant (the risk level the client chose when they first invested), the robo-advisor (and any asset manager in general) must constantly adjust the allocation of each position within the investment portfolio to match the target allocation. This process can be done quite easily using AI. Starting from a predefined allocation overview of all components of the investment portfolio, the following pseudo-code can be used to regularly check (monthly or quarterly, depending on the client's preferences) whether the actual allocation in the portfolio still matches the target allocation. Deviations occur simply due to stock price increases/decreases. If discrepancies exist, either an additional purchase of the stock or a sale is ordered. Even though this process is not specifically affected by any recently introduced regulation (e.g. FIDLEG or FINIA), we still wanted to include a short pseudo code.
+In this small code section, we want to touch on another AI-driven process within Robo-Advisory: the rebalancing process. As the economy is constantly changing, so is the stock market and the respective stock prices. In order to keep the risk level constant (the risk level the client chose when they first invested), the robo-advisor (and any asset manager in general) must constantly adjust the allocation of each position within the investment portfolio to match the target allocation. This process can be done quite easily using AI. Starting from a predefined allocation overview of all components of the investment portfolio, the following pseudo-code^[This pseudo-code is inspired by the Github user **siavashadpey**, accesible through following link: https://github.com/siavashadpey/rebalance] can be used to regularly check (monthly or quarterly, depending on the client's preferences) whether the actual allocation in the portfolio still matches the target allocation. Deviations occur simply due to stock price increases/decreases. If discrepancies exist, either an additional purchase of the stock or a sale is ordered. Even though this process is not specifically affected by any recently introduced regulation (e.g. FIDLEG or FINIA), we still wanted to include a short pseudo code.
 ```{python eval=FALSE}
 # Define target portfolio
 target_portfolio = {
@@ -186,14 +166,12 @@ portfolio = {
 tolerance = 5.00
 
 # Iterate over all stocks in our current portfolio
-total_value = 0
 for i in portfolio:
     # Calculate the total value of our portfolio (including cash)
     if i == Cash:
         total_value += portfolio[i]
         continue
     total_value += price * portfolio[i]
-    prices[i] = price
 
 # Record which stocks need to be rebalanced
 rebalance_needed = dict()
@@ -201,7 +179,7 @@ for i in target_portfolio:
 
     # Rebalance needed if: difference between example and target portfolio is greater than tolerance
     difference = ((prices[i] * portfolio[i]) / total_value) - target_portfolio[i]
-      if abs(difference) > tolerance:
+      if (difference) > tolerance:
           rebalance_needed[i] = difference
 
 # Now we can rebalance the portfolio

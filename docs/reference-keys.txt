@@ -5,7 +5,6 @@ embed-youtube-videos-with-a-still-frame
 ai-in-fintech-a-robo-advisory-case-study
 robo-advisory-regulation-recent-developments
 ai-driven-processes
-ai-driven-process
 risk-categories
 questionnaire
 point-distribution
@@ -14,7 +13,7 @@ rebalancing
 dlt-based-fintechs-market-and-regulation
 the-crypto-valley-success-story
 the-blockchain-act
-fintech-regulation-in-the-u.k
+fintech-regulation-in-the-u.k.
 voices-from-the-industry
 wealthtech
 crypto-industry
