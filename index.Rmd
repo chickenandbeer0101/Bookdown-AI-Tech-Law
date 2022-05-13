@@ -9,7 +9,7 @@ link-citations: yes
 
 # Introduction
 
-* **Word count: XX ** 
+* **Total Word Count: 9'369 ** 
 
 
 FinTech is a portmanteau for the words “Financial” and “Technology” and is used to describe “technology-based solutions for innovative digital products, services and processes in the financial sector”^[“FinTech in Switzerland : Fewer companies, more volume”, accessed 27 April 2022, https://www.hslu.ch/en/lucerne-university-of-applied-sciences-and-arts/about-us/media/medienmitteilungen/2022/03/09/FinTech-studie-2022/.]. FinTech companies usually distinguish themselves from traditional financial institutions by taking technologically innovative approaches to complement or replace financial services. 
