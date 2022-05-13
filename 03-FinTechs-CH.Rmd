@@ -9,6 +9,8 @@
 
 ## EXAMPLE OF FINSA
 
+@Stengel2020
+
 FinSA
 
 The FinSA came into force on January 1, 2020. The law primarily regulates how financial services must be provided and how financial instruments must be offered. As such, wealth managers, wealtechs and robo-advisors are directly impacted by its introduction. It is a comprehension revision and expansion of the supervisory regime under financial market law, with a drive for standardization: “same business, same rules”^[@Ankenbrand2017 , p. 14.]. 
@@ -38,5 +40,5 @@ Pursuant to Art. 2 FinSA, the following are subject to this Act, regardless of t
 ## Embed Youtube Videos with a still frame
 
 
-[![IMAGE_ALT](https://img.youtube.com/vi/-xmRaaVkvd8/0.jpg)](https://www.youtube.com/watch?v=-xmRaaVkvd8)
+[![IMAGE_ALT](https://img.youtube.com/vi/8GUDkfN4-Jk/0.jpg)](https://www.youtube.com/watch?v=8GUDkfN4-Jk)
 
