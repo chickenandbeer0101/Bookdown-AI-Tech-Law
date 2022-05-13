@@ -29,7 +29,7 @@ By product area, the market may be broken down into the payment, investment mana
 
 *Figure 2*^[@Ankenbrand2022]
 
-The largest crossroads between technology and product area is the combination of investment management and A.I., representing about 15% of all FinTech companies. In fact, 60% of all AI-based FinTechs operate in the investment management space, with the flagship  A.I. process in WealthTech being Robo-advisory, algorithm-based asset management (2.2). When comparing the Swiss FinTech scene internationally, the Institut für Finanzdienstleistungen Zug (IFZ) study found that Swiss FinTech is on average more active in the investment management product area and in the A.I. and DLT technologies^[@Ankenbrand2022 , p. 22.]. 
+The largest crossroads between technology and product area is the combination of investment management and A.I., representing about 15% of all FinTech companies. In fact, 60% of all AI-based FinTechs operate in the investment management space, with the flagship  A.I. process in WealthTech being Robo-advisory, algorithm-based asset management (3.2). When comparing the Swiss FinTech scene internationally, the Institut für Finanzdienstleistungen Zug (IFZ) study found that Swiss FinTech is on average more active in the investment management product area and in the A.I. and DLT technologies^[@Ankenbrand2022 , p. 22.]. 
 
 ### General FinTech Regulation  
 
