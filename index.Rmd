@@ -19,3 +19,82 @@ Switzerland is particularly well developed in the financial industry and has ear
 
 In this booklet, we explore how recent developments in financial regulation have impacted innovation in the Swiss FinTech scene. To this end, we begin by giving a general introduction to FinTechs and their regulation in Switzerland (Chapter 2). We then detail recent developments in financial markets regulation through the lens of robo-advisory, an A.I.-based asset manager. In particular, we study the introduction of FinSA^[Federal Act on Financial Services of June 15th, 2018 (“FinSA”; CC 950.1).], FinIA^[Federal Act on Financial Institutions of June 15th, 2018 (“FinIA”; CC 954.1).], and FADP^[Federal Act on Data Protection of September 25th, 2020 (“FADP”; FG 2020 7397).]. To gain more insight into artificial intelligence-based asset management, we provide pseudocode for a simplified robo-advisor (Chapter 3). We then nuance our discussion by exploring recent developments in distributed ledger technology (Chapter 4), as well as the current state of regulation in Europe’s second FinTech hub, the United Kingdom (U.K.) (Chapter 5). We finally turn to the voices of the industry through the video interviews of three Zurich based FinTechs: Descartes Finance AG, Relai AG and House of Satoshi (Chapter 6). These interviews are available through their respective hyperlinks.   
 
+# Table of Abbreviations
+
+| Abbreviation | Syntax |
+| :---        | :---   |
+| A.I.		    | Artificial Intelligence	|
+| ADM         | Automated Decision Making |
+| AG          | Aktiengesellschaft |
+| AMLA		    | Federal Act on Combating Money Laundering and Terrorist Financing of October 10th, 1997 (CC 955.0) |
+| Art.		    | Article |
+| ATM         | Automated Teller Machine |
+| BA          | Banking Act of November 8th, 1934 (CC 952.0) |
+| BankV		    | Verordnung über die Banken und Sparkassen (Ordinance on banks and savings banks) of 30th April 2014 (CC 952.02) |
+| BGE	        |	Entscheidungen des Schweizerischen Bundesgerichts (Decisions of the Swiss Federal Court) |
+| BTC		      | Bitcoin|
+| CC		      | Classified Compilation of Swiss Federal Law |
+| CEO 	|	Chief executive officer|
+| CHF		| Swiss francs|
+| CISA		| Federal Act on Collective Investment Schemes of June 23rd, 2006 (CC 951.31)|
+| CO		| Federal Act on the Amendment of the Swiss Civil Code (Part Five: The Code of Obligations) of July 1st, 1911 (CC 220)|
+| Cst.	|	Federal Constitution of the Swiss Confederation of April 18th, 1999 (CC 101)|
+| DeFi               | Decentralized Finance|
+| DLT                | Distributed ledger technology|
+| DLT Act       | Federal Act on the Adaptation of Federal Law to Developments in Distributed Electronic Register Technology in Federal Act on the Amendment of the Swiss Civil Code (Part Five: The Code of Obligations) of July 1st, 1911 (CC 220) |
+| Dr.		| Doctor |
+| e.g.	|	Exempli gratia |
+| EPFL            |  École Polytechnique Fédérale de Lausanne |
+| et al.	|	Et alii|
+| etc.		| Et cetera| 
+| et seq.		| Et sequentes|
+| ETF            |    An exchange-traded fund|
+| ETH              |Eidgenössische Technische Hochschule (Swiss Federal Institute of Technology)|
+| EUR             | Euro Currency|
+| FADP           | Federal Act on Data Protection of September 25th, 2020 (FG 2020 7397)|
+| FCA               |The Financial Conduct Authority|
+| FG		 | Swiss Federal Law Gazette|
+| FIDLEG	| Schweizer Finanzdienstleistungsgesetz |
+| FinIA		| Federal Act on Financial Institutions of June 15th, 2018 (CC 954.1) |
+| FinIO		| Ordinance on Financial Institutions of November 6th, 2019 (CC 954.11) | 
+| FINIG        |     FinIA |
+| FINMA		 | Swiss Financial Market Supervisory Authority |  
+| FINMASA  |	Federal Act on the Swiss FInancial Market Supervisory Authority of June 22nd, 2007 (CC 956.1) |
+| FinSA 		| Federal Act on Financial Services of June 15th, 2018 (CC 950.1) |
+| FinSO 		| Ordinance on Financial Services of June 6th, 2019 (CC 950.11) |
+| FinTech        |   Financial Technology |
+| FMI		 | Financial Market Infrastructures |
+| FMIA		| Financial Market Infrastructure Act of June 19th, 2015 (CC 958.1) |
+| GBP		 | Great Britain Pound |
+| GDPR             | General Data Protection Regulation is applicable as of May 25th, 2018 |
+| i.e.          | id est |
+| ICLG	|	The International Comparative Legal Guides |
+| ICO		| Initial Coin Offering |
+| IFZ                  | Institut für Finanzdienstleistungen Zug |
+| ISA    	| 	Insurance Supervision Act of December 17th, 2004 (CC 961.01) |
+| KYC         |  Know Your Customer |
+| Let. 	 |	Letter|
+| N		  | Number(s)|
+| OECD	|	Organisation for Economic Co-operation and Development | 
+| p.		 | Page| 
+| Par.	|	Paragraph |
+| pp.		| Pages |
+| PRA		| Prudential Regulation Authority |
+| R&D         |  Research and Development |
+| rec.		| Recital |
+| RegTech       |  Regulation Technology |
+| revDPA 	 | FADP |
+| RSDA	|	Revue suisse de droit des affaires du marché |
+| S.		| Seite (Page) |
+| SMEs     | Small and Medium-sized Enterprises |
+| SMI       | Swiss Market Index |
+| U.S.		| United States |
+| UK 		| United Kingdom  |
+| USA       | United States of America |
+| USD		| United States Dollars |
+| VC		| Venture Capital  |
+| Vol.     | Volume |
+| WealthTech    | Wealth and Technology | 
+
+
+
