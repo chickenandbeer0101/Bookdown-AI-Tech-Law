@@ -1,4 +1,4 @@
-abstract
+overview
 introduction
 fintechs-in-switzerland
 fintechs-in-switzerland-1
@@ -8,6 +8,10 @@ general-fintech-regulation
 fintech-specific-incentives
 a.i.-in-fintech-a-robo-advisory-case-study
 robo-advisory-regulation-recent-developments
+finsa
+consequences-of-the-application-of-finsa-through-the-lens-of-robo-advisory
+finia
+fadp
 case-study-a.i.-driven-processes
 risk-categories
 questionnaire

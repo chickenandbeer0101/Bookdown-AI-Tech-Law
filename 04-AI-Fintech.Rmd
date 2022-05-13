@@ -17,7 +17,7 @@ In Switzerland, robo-advisory has seen consistent growth since 2017. Statista es
 
 In this subchapter, we explore recent developments in financial markets law and their applications to  robo-advisory. 
 
-**FinSA**
+### FinSA
 
 The FinSA came into force on January 1, 2020. The law primarily regulates how financial services must be provided and how financial instruments must be offered. As such, wealth managers, wealtechs and robo-advisors are directly impacted by its introduction. It is a comprehension revision and expansion of the supervisory regime under financial market law, with a drive for standardization: “same business, same rules”^[@Fausch2020, p. 14.]. 
 
@@ -33,7 +33,7 @@ Therefore, robo-advisors are considered to be financial service providers since 
 
 The application of the FinSA does not require the FinTech company to obtain an authorization from the FINMA^[@Favrod2021, p. 209]. However, FinTech must now comply with several legal requirements before starting their activity, at the risk of being subject to criminal sanctions (Art. 89 et seq. FinSA). 
 
-**Consequences of the Application of FinSA: through the lens of Robo-Advisory**
+#### Consequences of the Application of FinSA: through the lens of Robo-Advisory
 
 **Client Segmentation**, Art. 4 FinSA. Financial service providers must carry out a segmentation of their clients by classifying the persons who they provide such services to. The categories for segmentation are provided by the law: retail clients (Par. 2), professional clients (Par. 3) and institutional clients (al. 4). 
 
@@ -70,7 +70,7 @@ In addition, according to Art. 18 FinSO, the robo-advisor must be able to accoun
 
 Other requirements. The financial service provider has an obligation to respect the principles of transparency and diligence regarding client orders (Art. 17 FinSA and 20 FinSO ; Art. 18 FinSA and 21 et seq. FinSO). Moreover, ​​the financial service provider must comply with the organizational requirements set out in Art. 21 et seq. FinSA.
 
-**FinIA**
+### FinIA
 
 The FinIA does not contain any specific rules regarding FinTech. This implies that the conditions of application are the same for all regardless of the technology used (principle of innovative-neutrality). 
 
@@ -87,7 +87,7 @@ If FinTech operates a robo advisor that directly makes an investment decision re
 The consequence of falling under this law is that portfolio managers are required to obtain a license form FINMA since they are financial institutions (Art. 5 Par. 1 FinIA). However, robo-advisors that only provide investment advice must enter the register of advisors (art. 28 et seq. FinSA) but they are not required to obtain a license and/or prudential supervision ^[@Hirsch2022, p. 36.]. If a license is required, portfolio managers (and trustees) must be subject to a supervisory organisation in accordance with Art. 43a FINMASA and must be able to provide proof of this in order to apply for a license (Art. 7 (2) FinIA).
 Art. 6 FinIA provides a cascading authorisation that allows a company, which has a more restrictive type of authorization to obtain, to carry out the authorized activities under more flexible conditions ^[@Favrod2021, p. 187.]. Thus, “authorisation to operate as a manager of collective assets also authorises an entity to operate as a portfolio manager” (Art. 6 (4) FinIA). The FinTech will have to respect all the obligations that result from these cascading authorizations ^[FG 2015 2818.]. The conditions of authorization are found in Art. 7 et seq. FinIA and 17 et seq. FinIA. 
 
-**FADP**
+### FADP
 
 From September 2023, the new revised Swiss Federal Act on Data Protection (FADP) will come into force with important provisions governing the processing of personal data. The FADP’s main objective is to strengthen data subjects’ self-determination in relation to their data. The FADP is largely based on the General Data Protection Regulation (GDPR), which has been adopted by the EU and has been in effect since 25 May 2018^[“What does the revision of the Swiss Data Protection Act entail, and how does it relate to the GDPR and the ePrivacy Regulation?”, accessed 4 May 2022, https://www.pwc.ch/en/publications/2018/Swiss-Federal-Protection-Act.pdf.].
  
