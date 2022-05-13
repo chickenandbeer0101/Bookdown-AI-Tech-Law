@@ -11,7 +11,7 @@ The first robo-advisor was launched by Betterment^[“Robo-Advisor”, accessed 
 
 In Switzerland, robo-advisory has seen consistent growth since 2017. Statista estimates current Assets under management^[AUM is the total market value of the investments that a person or entity manages on behalf of clients:  “Asset Under Management (AUM)”, accessed 6 May 2022, https://www.investopedia.com/terms/a/aum.asp .] (AUM) at USD 5.7 billion, and projected to hike to USD 17.5 billion by 2026.  In addition, AUM are expected to show an annual growth rate between 2022 and 2026 of 31.13% resulting in a projected total amount of USD 17.32 billion by 2026^[“Robo-advisors”, accessed 6 May 2022, https://www.statista.com/outlook/dmo/FinTech/digital-investment/robo-advisors/switzerland.]. 
 
-![Figure 5](pic-5.png "Title"){width=70%}
+![](pic-5.png "Title"){width=70%}
 
 *Figure 5*^[Source: “Robo-advisors”, accessed 6 May 2022, https://www.statista.com/outlook/dmo/FinTech/digital-investment/robo-advisors/switzerland.]
 
