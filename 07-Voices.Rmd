@@ -1,11 +1,8 @@
 # Voices from the Industry
-In this subsection, we want to let people from the industry have their say about what they think of regulation, how new laws affect their business, and what they would like to see changed. To this end, we've compiled bits and pieces from all three interviews and edited them into a video that can be watched here.
+In this section, we relay some of the main lessons learned when interviewing actors of the Zurich FinTech scene. Each one of their full interviews is available through a hyperlink. 
 
-[![IMAGE_ALT](https://img.youtube.com/vi/-xmRaaVkvd8/0.jpg)](https://www.youtube.com/watch?v=-xmRaaVkvd8)
-
-
-## WealthTech
-*Digital-only asset manager Descartes Finance AG, one of the leading Swiss FinTech startups in the area of Robo-Advisory, aims to democratize investing, both in asset management and pensions. Likewise, the WealthTech startup is focused on sustainability, both internally and externally using ESG-compliant investment products. We had the opportunity to sit down with CEO and co-founder Dr. Adriano Lucatelli and ask him questions regarding the recently introduced FinSa and his overall opinion on regulations in the financial sector. The full interview as video can be watched [here (ADD YOUTUBE LINK !!!!)](https://www.youtube.com)*
+## Descartes Finance AG
+*Dr. Adriano Lucatelli is the CEO and Co-Founder of the digital-only asset management firm Descartes Finance AG, a leading Robo-advisory firm in Switzerland. This firm belongs to the business area of Investment Management and is A.I.-based. View the full interview here.*
 
 > "Regulation should primarily try to prevent macroeconomic financial shocks, not regulate every single process in the financial industry."
 >
