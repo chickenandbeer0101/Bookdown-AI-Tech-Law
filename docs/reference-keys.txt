@@ -6,9 +6,9 @@ the-fintech-market
 fintech-classification
 general-fintech-regulation
 fintech-specific-incentives
-ai-in-fintech-a-robo-advisory-case-study
+a.i.-in-fintech-a-robo-advisory-case-study
 robo-advisory-regulation-recent-developments
-case-study-ai-driven-processes
+case-study-a.i.-driven-processes
 risk-categories
 questionnaire
 point-distribution
@@ -23,8 +23,7 @@ regulatory-landscape
 sandbox-regime
 voices-from-the-industry
 descartes-finance-ag
-crypto-industry
-relai-ag-europes-easiest-bitcoin-investment-app
-house-of-satoshi-home-of-bitcoin
+house-of-satoshi
+relai-ag
 conclusion
 references
