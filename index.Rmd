@@ -9,4 +9,4 @@ link-citations: yes
 
 # Overview
 
-**Number of words: XX ** 
+**Word count: XX ** 
