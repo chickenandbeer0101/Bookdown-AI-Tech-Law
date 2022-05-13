@@ -21,7 +21,7 @@ In this booklet, we explore how recent developments in financial regulation have
 
 # Table of Abbreviations
 
-| Abbreviation | Syntax |
+| Abbreviation | Description |
 | :---        | :---   |
 | A.I.		    | Artificial Intelligence	|
 | ADM         | Automated Decision Making |
