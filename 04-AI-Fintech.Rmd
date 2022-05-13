@@ -1,6 +1,6 @@
 # A.I. in FinTech: A Robo-Advisory Case Study
 
-> "One of the hottest trends to emerge in [wealth management] is the use of robo-advisors."
+> *"One of the hottest trends to emerge in [wealth management] is the use of robo-advisors."*
 >
 > -- Kent Smetters, Chair Professor at UPenn’s Wharton School
 
@@ -84,7 +84,7 @@ In addition, according to Art. 18 FinSO, the robo-advisor must be able to accoun
 
 The FinIA does not contain any specific rules regarding FinTech. This implies that the conditions of application are the same for all regardless of the technology used (principle of innovative-neutrality). 
 
-FinIA’s objective, according to Art. 1 Par. 2 FinIA,“ is to protect the investors and clients of financial institutions and ensure the proper functioning of the financial market”. On reading this provision, one can see that a further purpose is to regulate uniformly the requirements imposed on financial institutions who invest and manage the assets of others in the conduct of their business^[FG 2015 8214.]^[@Favrod2021 , p. 179.].
+FinIA’s objective, according to Art. 1 Par. 2 FinIA,“ is to protect the investors and clients of financial institutions and ensure the proper functioning of the financial market”. On reading this provision, one can see that a further purpose is to regulate uniformly the requirements imposed on financial institutions who invest and manage the assets of others in the conduct of their business^[FG 2015 8214.; @Favrod2021 , p. 179.].
 
 Pursuant to art. 2 Par. 1 FinIA, the law regulates 5 types of financial institutions which are the following : portfolio managers ; trustees ; managers of collective assets ; fund management companies ; securities firms. Paragraph 2 lists the persons excluded from the scope of the law. 
 
@@ -112,7 +112,7 @@ c. The decision must produce legal effects concerning the data subject or simila
 
 Considering the typical robo-advisor’s onboarding process, these three conditions are met, since it handles (1) one client per process, (2) there is no human intervention, and (3) each investment decision made by an algorithm consists in selling or buying financial instruments in the name and on behalf of the client^[@Hirsch2022 , p.42].
 
-GDPR prohibits ADMby stating that any “data subject shall have the right not to be subject to a decision based solely on automated processing, including profiling”[@Hirsch2022 , p.41]. Unlike GDPR, Swiss law does not prohibit ADM, and only imposes appropriate safeguards and the duty to inform the data subject[@Hirsch2022 , p.44]. Under the FADP, no "legal basis" (so-called "justification", i.e. the Swiss equivalent of the European legal basis under Art. 6 and 9 GDPR) is in principle required to lawfully process personal data. Thus, a justification is only required if the processing of personal data results in a violation of the personality of the data subjects (Art. 30 Par. 2 FADP). 
+GDPR prohibits ADM by stating that any “data subject shall have the right not to be subject to a decision based solely on automated processing, including profiling” [@Hirsch2022 , p.41]. Unlike GDPR, Swiss law does not prohibit ADM, and only imposes appropriate safeguards and the duty to inform the data subject [@Hirsch2022 , p.44]. Under the FADP, no "legal basis" (so-called "justification", i.e. the Swiss equivalent of the European legal basis under Art. 6 and 9 GDPR) is in principle required to lawfully process personal data. Thus, a justification is only required if the processing of personal data results in a violation of the personality of the data subjects (Art. 30 Par. 2 FADP). 
 The most notable difference between FADP and GDPR is that FADP treats the process of the profile differently by the intensity of risk. Under the FADP, a valid consent is one that is given voluntarily upon provision of adequate information ("informed consent"). It is effective if it was given prior to the processing. However, the implied consent does not apply to sensitive 
 
 personal data or profiling "involving a high risk" (i.e. profiling that results in a personality profile and carries a high risk of negative consequences for the data subject)^[“Swiss revDPA: Comparison with the GDPR”, accessed 4 May 2022, https://www.vischer.com/fileadmin/uploads/vischer/Documents/Diverses/210526_VISCHER_New_Swiss_DPA_-_Comparison_with_the_GDPR__Version_1.01_.pdf.] . 
@@ -237,7 +237,7 @@ def new_risk_profile():
 ```
 
 ### Portfolio Recommendation
-Finally, the robo-advisor makes an investment strategy. Two requirements are added: first, the client must be at least 18 years old and not yet retired to become a client with our company. Second, the minimum investment amount is CHF 2,000; in line with Inyova. We have also added a small feature that allows the algorithm to automatically combine our recommended investment portfolio if the above two requirements are met. One should note that these investment strategies are, in practice, the fruit of careful optimization algorithms based on (in the case of Switzerland) stocks which are listed on the Swiss Market Index (SMI) and bonds and/or an exchange-traded funds (ETF).  
+In this next step, the robo-advisor makes an investment strategy. Two requirements are added: first, the client must be at least 18 years old and not yet retired to become a client with our company. Second, the minimum investment amount is CHF 2,000; in line with Inyova. We have also added a small feature that allows the algorithm to automatically combine our recommended investment portfolio if the above two requirements are met. One should note that these investment strategies are, in practice, the fruit of careful optimization algorithms based on (in the case of Switzerland) stocks which are listed on the Swiss Market Index (SMI) and bonds and/or an exchange-traded funds (ETF). 
 ```{python eval=FALSE}
 # Final Recommendation
 def portfolio_recommendation():
@@ -258,7 +258,8 @@ def portfolio_recommendation():
 
 
 ### Rebalancing
-In this small code section, we want to touch on another AI-driven process within Robo-Advisory: the rebalancing process. As the economy is constantly changing, so is the stock market and the respective stock prices. In order to keep the risk level constant (the risk level the client chose when they first invested), the robo-advisor (and any asset manager in general) must constantly adjust the allocation of each position within the investment portfolio to match the target allocation. This process can be done quite easily using AI. Starting from a predefined allocation overview of all components of the investment portfolio, the following pseudo-code^[This pseudo-code is inspired by Github user **siavashadpey**, accessible through following link: https://github.com/siavashadpey/rebalance] can be used to regularly check (monthly or quarterly, depending on the client's preferences) whether the actual allocation in the portfolio still matches the target allocation. Deviations occur simply due to stock price increases/decreases. If discrepancies exist, either an additional purchase of the stock or a sale is ordered. Even though this process is not specifically affected by any recently introduced regulation (e.g. FinSA or FINIA), we still wanted to include a short pseudo code.
+Finally, we come to portfolio rebalancing. In order to keep the risk level chosen by the client constant, the algorithm of the following pseudo-code^[This pseudo-code is inspired by Github user **siavashadpey**, accessible through following link: https://github.com/siavashadpey/rebalance] must periodically adjust the allocation of each position within the investment portfolio. Starting from a predefined allocation overview of all components of the investment portfolio, the algorithm will check whether the actual allocation in the portfolio still matches the target allocation. Deviations occur simply due to stock price increases/decreases. If discrepancies exist, either automated purchases or sales of the stocks are ordered. 
+
 ```{python eval=FALSE}
 # Define target portfolio
 target_portfolio = {
