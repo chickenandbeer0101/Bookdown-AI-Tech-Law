@@ -58,6 +58,7 @@ Par. 7 of this provision provides for the possibility for financial service prov
 The segmentation system provided for in Art. 4 FinSA is not fixed^[@Favrod2021 , p. 210]. Indeed, under certain conditions provided for in Art. 5 FinSA, clients can change their status.
 
 **Information Duties**, Art. 8 and 9 FinSA; Art. 6 *et seq.* FinSO. The service provider must comply with an information obligation. According to Art. 8 FinSA, the company must inform the client about itself and its financial services as well as about the associated risks. In particular, based on Art. 7 Par. 1 FinSO, the robo-advisor also has a duty to actively inform the customer about how robo-advisors work and  the client must be informed about the objectives, the risks and the benefits of the robo-advisor. Likewise, in accordance with the same Article, the client must know that the investment decisions are based on algorithms that use the information provided by the client in the questionnaire during the onboarding process.			
+
 Following the recommendation of @Hirsch2022 , it is also certainly advisable that robo-advisors inform their clients that under certain conditions human intervention would be possible, for rebalancing the individual positions in the portfolio, such as in times of recessions and financial downturns^[@Hirsch2022 , pp. 38-39.]. If robo-advisors use not only traditional algorithms but also machine learning, @Hirsch2022 believes that the client should be informed about this as well^[@Hirsch2022 , p. 38.] 
 
 
@@ -90,7 +91,7 @@ Pursuant to art. 2 Par. 1 FinIA, the law regulates 5 types of financial institut
 
 Therefore, to examine the application of the FinIA for Fintech operating in asset management as a commercial operation, it is necessary to distinguish between portfolio management and investment advice. Indeed, only the portfolio managers are subject to the FinIA (Art. 12 Par. 1 Let. a FinIA)^[@Hirsch2022, p.36.; @Favrod2021 , pp. 185-186.]. This way, FinTechs operating in asset management can be represented by the following figure: 
 
-![Figure 7](pic-7.png "Title")
+![](pic-7.png "Title")
 
 *Figure 7*^[Source: own illustration]
 
