@@ -23,7 +23,7 @@
 <meta name="author" content="Line Hasler, Jessica Rye, Yaejin Kim, Philipp Pag" />
 
 
-<meta name="date" content="2022-05-12" />
+<meta name="date" content="2022-05-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -119,6 +119,28 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -141,7 +163,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="fintechs-in-switzerland.html"><a href="fintechs-in-switzerland.html"><i class="fa fa-check"></i><b>3</b> FinTechs in Switzerland<span></span></a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="fintechs-in-switzerland.html"><a href="fintechs-in-switzerland.html#fintechs-in-switzerland-1"><i class="fa fa-check"></i><b>3.1</b> FinTechs in Switzerland<span></span></a></li>
-<li class="chapter" data-level="3.2" data-path="fintechs-in-switzerland.html"><a href="fintechs-in-switzerland.html#embed-youtube-videos-with-a-still-frame"><i class="fa fa-check"></i><b>3.2</b> Embed Youtube Videos with a still frame<span></span></a></li>
+<li class="chapter" data-level="3.2" data-path="fintechs-in-switzerland.html"><a href="fintechs-in-switzerland.html#example-of-finsa"><i class="fa fa-check"></i><b>3.2</b> EXAMPLE OF FINSA<span></span></a></li>
+<li class="chapter" data-level="3.3" data-path="fintechs-in-switzerland.html"><a href="fintechs-in-switzerland.html#embed-youtube-videos-with-a-still-frame"><i class="fa fa-check"></i><b>3.3</b> Embed Youtube Videos with a still frame<span></span></a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="ai-in-fintech-a-robo-advisory-case-study.html"><a href="ai-in-fintech-a-robo-advisory-case-study.html"><i class="fa fa-check"></i><b>4</b> AI in FinTech: A Robo-Advisory Case Study<span></span></a>
 <ul>
@@ -194,7 +217,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="ai-driven-processes" class="section level2 hasAnchor" number="4.2">
 <h2><span class="header-section-number">4.2</span> AI-driven Processes<a href="ai-in-fintech-a-robo-advisory-case-study.html#ai-driven-processes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Robo-advisors differ by institution, based on their underlying algorithm. However, their implementation steps are consistently the same. Clients first complete a questionnaire to assess risk tolerance, investment ambition and needs. Based on this information, the robo-advisor builds a diversified portfolio based on an algorithm, a set of predefined rules, created by investment professionals. These investment professionals monitor market signals and ensure that the algorithm is rebalancing the portfolio appropriately<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.</p>
+<p>Robo-advisors differ by institution, based on their underlying algorithm. However, their implementation steps are consistently the same. Clients first complete a questionnaire to assess risk tolerance, investment ambition and needs. Based on this information, the robo-advisor builds a diversified portfolio based on an algorithm, a set of predefined rules, created by investment professionals. These investment professionals monitor market signals and ensure that the algorithm is rebalancing the portfolio appropriately<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>.</p>
 <p>We have created pseudocode chunks in Python to illustrate the mechanism by which the robo-advisor categorizes the client, assigns a portfolio and rebalances it. Note that we have only used a very naive questionnaire, which in reality would not comply with the revised FinSA, as we do not distinguish between risk capacity and risk preference. This step would be needed to prevent any risk oversteering. In practice, this may be done by using the lowest score between risk capacity and preference for the final risk category assignment. The AI-portfolio attribution process has been highly simplified, with investment strategies consisting of simple bond to equity ratios.</p>
 <div id="risk-categories" class="section level3 hasAnchor" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> Risk categories<a href="ai-in-fintech-a-robo-advisory-case-study.html#risk-categories" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -211,7 +234,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="questionnaire" class="section level3 hasAnchor" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> Questionnaire<a href="ai-in-fintech-a-robo-advisory-case-study.html#questionnaire" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Current trends in the robo-advisory industry show questionnaires are generally being shortened to make robo-advisory solutions more attractive to new clients. However, enough questions need to be asked to correctly identify the client’s risk capacity and risk preference and to comply with regulations such as the FinSA. For simplicity, we have included 10 questions in the following pseudocode, which are inspired by several leading Swiss robo-advisors<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>.</p>
+<p>Current trends in the robo-advisory industry show questionnaires are generally being shortened to make robo-advisory solutions more attractive to new clients. However, enough questions need to be asked to correctly identify the client’s risk capacity and risk preference and to comply with regulations such as the FinSA. For simplicity, we have included 10 questions in the following pseudocode, which are inspired by several leading Swiss robo-advisors<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="ai-in-fintech-a-robo-advisory-case-study.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Questions</span></span>
 <span id="cb2-2"><a href="ai-in-fintech-a-robo-advisory-case-study.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> risk_profile:</span>
 <span id="cb2-3"><a href="ai-in-fintech-a-robo-advisory-case-study.html#cb2-3" aria-hidden="true" tabindex="-1"></a>    </span>
@@ -324,7 +347,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="rebalancing" class="section level3 hasAnchor" number="4.2.5">
 <h3><span class="header-section-number">4.2.5</span> Rebalancing<a href="ai-in-fintech-a-robo-advisory-case-study.html#rebalancing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In this small code section, we want to touch on another AI-driven process within Robo-Advisory: the rebalancing process. As the economy is constantly changing, so is the stock market and the respective stock prices. In order to keep the risk level constant (the risk level the client chose when they first invested), the robo-advisor (and any asset manager in general) must constantly adjust the allocation of each position within the investment portfolio to match the target allocation. This process can be done quite easily using AI. Starting from a predefined allocation overview of all components of the investment portfolio, the following pseudo-code<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> can be used to regularly check (monthly or quarterly, depending on the client’s preferences) whether the actual allocation in the portfolio still matches the target allocation. Deviations occur simply due to stock price increases/decreases. If discrepancies exist, either an additional purchase of the stock or a sale is ordered. Even though this process is not specifically affected by any recently introduced regulation (e.g. FIDLEG or FINIA), we still wanted to include a short pseudo code.</p>
+<p>In this small code section, we want to touch on another AI-driven process within Robo-Advisory: the rebalancing process. As the economy is constantly changing, so is the stock market and the respective stock prices. In order to keep the risk level constant (the risk level the client chose when they first invested), the robo-advisor (and any asset manager in general) must constantly adjust the allocation of each position within the investment portfolio to match the target allocation. This process can be done quite easily using AI. Starting from a predefined allocation overview of all components of the investment portfolio, the following pseudo-code<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> can be used to regularly check (monthly or quarterly, depending on the client’s preferences) whether the actual allocation in the portfolio still matches the target allocation. Deviations occur simply due to stock price increases/decreases. If discrepancies exist, either an additional purchase of the stock or a sale is ordered. Even though this process is not specifically affected by any recently introduced regulation (e.g. FIDLEG or FINIA), we still wanted to include a short pseudo code.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="ai-in-fintech-a-robo-advisory-case-study.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define target portfolio</span></span>
 <span id="cb5-2"><a href="ai-in-fintech-a-robo-advisory-case-study.html#cb5-2" aria-hidden="true" tabindex="-1"></a>target_portfolio <span class="op">=</span> {</span>
 <span id="cb5-3"><a href="ai-in-fintech-a-robo-advisory-case-study.html#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;AAPL&quot;</span>: <span class="fl">30.00</span>,</span>
@@ -370,10 +393,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="footnotes">
 <hr />
-<ol start="6">
-<li id="fn6"><p>“Robo-Advisors: An Introduction”, accessed 4 May 2022, <a href="https://www.schwab.com/automated-investing/what-is-a-robo-advisor" class="uri">https://www.schwab.com/automated-investing/what-is-a-robo-advisor</a><a href="ai-in-fintech-a-robo-advisory-case-study.html#fnref6" class="footnote-back">↩︎</a></p></li>
-<li id="fn7"><p>We looked at the questionnaire of, among others, Descartes Finance AG, True Wealth and Inyova<a href="ai-in-fintech-a-robo-advisory-case-study.html#fnref7" class="footnote-back">↩︎</a></p></li>
-<li id="fn8"><p>This pseudo-code is inspired by the Github user <strong>siavashadpey</strong>, accesible through following link: <a href="https://github.com/siavashadpey/rebalance" class="uri">https://github.com/siavashadpey/rebalance</a><a href="ai-in-fintech-a-robo-advisory-case-study.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<ol start="11">
+<li id="fn11"><p>“Robo-Advisors: An Introduction”, accessed 4 May 2022, <a href="https://www.schwab.com/automated-investing/what-is-a-robo-advisor" class="uri">https://www.schwab.com/automated-investing/what-is-a-robo-advisor</a><a href="ai-in-fintech-a-robo-advisory-case-study.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<li id="fn12"><p>We looked at the questionnaire of, among others, Descartes Finance AG, True Wealth and Inyova<a href="ai-in-fintech-a-robo-advisory-case-study.html#fnref12" class="footnote-back">↩︎</a></p></li>
+<li id="fn13"><p>This pseudo-code is inspired by the Github user <strong>siavashadpey</strong>, accesible through following link: <a href="https://github.com/siavashadpey/rebalance" class="uri">https://github.com/siavashadpey/rebalance</a><a href="ai-in-fintech-a-robo-advisory-case-study.html#fnref13" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

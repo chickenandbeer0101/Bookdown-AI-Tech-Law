@@ -7,4 +7,6 @@ bibliography: library.bib
 link-citations: yes
 ---
 
+**Number of words:** 
+
 # Abstract

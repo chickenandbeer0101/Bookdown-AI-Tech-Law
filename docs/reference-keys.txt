@@ -2,6 +2,7 @@ abstract
 introduction
 fintechs-in-switzerland
 fintechs-in-switzerland-1
+example-of-finsa
 embed-youtube-videos-with-a-still-frame
 ai-in-fintech-a-robo-advisory-case-study
 robo-advisory-regulation-recent-developments
