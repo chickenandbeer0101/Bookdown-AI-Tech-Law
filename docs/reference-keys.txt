@@ -1,5 +1,4 @@
 introduction
-table-of-abbreviations
 fintechs-in-switzerland
 fintechs-in-switzerland-1
 the-fintech-market
@@ -31,4 +30,5 @@ descartes-finance-ag
 house-of-satoshi
 relai-ag
 conclusion
+table-of-abbreviations
 references

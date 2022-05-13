@@ -1,0 +1,76 @@
+# Table of Abbreviations
+
+| Abbreviation | Description |
+| :---        | :---   |
+| A.I.		    | Artificial Intelligence	|
+| ADM         | Automated Decision Making |
+| AG          | Aktiengesellschaft |
+| AMLA		    | Federal Act on Combating Money Laundering and Terrorist Financing of October 10th, 1997 (CC 955.0) |
+| Art.		    | Article |
+| ATM         | Automated Teller Machine |
+| BA          | Banking Act of November 8th, 1934 (CC 952.0) |
+| BankV		    | Verordnung über die Banken und Sparkassen (Ordinance on banks and savings banks) of 30th April 2014 (CC 952.02) |
+| BGE	        |	Entscheidungen des Schweizerischen Bundesgerichts (Decisions of the Swiss Federal Court) |
+| BTC		      | Bitcoin|
+| CC		      | Classified Compilation of Swiss Federal Law |
+| CEO 	|	Chief executive officer|
+| CHF		| Swiss francs|
+| CISA		| Federal Act on Collective Investment Schemes of June 23rd, 2006 (CC 951.31)|
+| CO		| Federal Act on the Amendment of the Swiss Civil Code (Part Five: The Code of Obligations) of July 1st, 1911 (CC 220)|
+| Cst.	|	Federal Constitution of the Swiss Confederation of April 18th, 1999 (CC 101)|
+| DeFi               | Decentralized Finance|
+| DLT                | Distributed ledger technology|
+| DLT Act       | Federal Act on the Adaptation of Federal Law to Developments in Distributed Electronic Register Technology in Federal Act on the Amendment of the Swiss Civil Code (Part Five: The Code of Obligations) of July 1st, 1911 (CC 220) |
+| Dr.		| Doctor |
+| e.g.	|	Exempli gratia |
+| EPFL            |  École Polytechnique Fédérale de Lausanne |
+| et al.	|	Et alii|
+| etc.		| Et cetera| 
+| et seq.		| Et sequentes|
+| ETF            |    An exchange-traded fund|
+| ETH              |Eidgenössische Technische Hochschule (Swiss Federal Institute of Technology)|
+| EUR             | Euro Currency|
+| FADP           | Federal Act on Data Protection of September 25th, 2020 (FG 2020 7397)|
+| FCA               |The Financial Conduct Authority|
+| FG		 | Swiss Federal Law Gazette|
+| FIDLEG	| Schweizer Finanzdienstleistungsgesetz |
+| FinIA		| Federal Act on Financial Institutions of June 15th, 2018 (CC 954.1) |
+| FinIO		| Ordinance on Financial Institutions of November 6th, 2019 (CC 954.11) | 
+| FINIG        |     FinIA |
+| FINMA		 | Swiss Financial Market Supervisory Authority |  
+| FINMASA  |	Federal Act on the Swiss FInancial Market Supervisory Authority of June 22nd, 2007 (CC 956.1) |
+| FinSA 		| Federal Act on Financial Services of June 15th, 2018 (CC 950.1) |
+| FinSO 		| Ordinance on Financial Services of June 6th, 2019 (CC 950.11) |
+| FinTech        |   Financial Technology |
+| FMI		 | Financial Market Infrastructures |
+| FMIA		| Financial Market Infrastructure Act of June 19th, 2015 (CC 958.1) |
+| GBP		 | Great Britain Pound |
+| GDPR             | General Data Protection Regulation is applicable as of May 25th, 2018 |
+| i.e.          | id est |
+| ICLG	|	The International Comparative Legal Guides |
+| ICO		| Initial Coin Offering |
+| IFZ                  | Institut für Finanzdienstleistungen Zug |
+| ISA    	| 	Insurance Supervision Act of December 17th, 2004 (CC 961.01) |
+| KYC         |  Know Your Customer |
+| Let. 	 |	Letter|
+| N		  | Number(s)|
+| OECD	|	Organisation for Economic Co-operation and Development | 
+| p.		 | Page| 
+| Par.	|	Paragraph |
+| pp.		| Pages |
+| PRA		| Prudential Regulation Authority |
+| R&D         |  Research and Development |
+| rec.		| Recital |
+| RegTech       |  Regulation Technology |
+| revDPA 	 | FADP |
+| RSDA	|	Revue suisse de droit des affaires du marché |
+| S.		| Seite (Page) |
+| SMEs     | Small and Medium-sized Enterprises |
+| SMI       | Swiss Market Index |
+| U.S.		| United States |
+| UK 		| United Kingdom  |
+| USA       | United States of America |
+| USD		| United States Dollars |
+| VC		| Venture Capital  |
+| Vol.     | Volume |
+| WealthTech    | Wealth and Technology | 
