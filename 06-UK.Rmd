@@ -53,5 +53,5 @@ According to the FCA, the eligibility criteria for the United Kingdom’s regula
 * Readiness: whether the innovation is mature enough to be tested on the market
 * Need for support: whether the sandbox regime is genuinely needed 
 
-Sandboxes have been very effective in the United Kingdom. Empirical evidence from @Cornelli2020 shows that firms entering the sandbox between 2014 and 2019 see an increase of 15% in capital raised post-entry; their probability of raising capital increases by 50%. By reducing asymmetric information and regulatory costs, the sandbox facilitates access to capital [@Cornelli2020, p.26]. 
+Sandboxes have been very effective in the United Kingdom. Empirical evidence from @Cornelli2020 shows that firms entering the sandbox between 2014 and 2019 see an increase of 15% in capital raised post-entry; their probability of raising capital increases by 50%. By reducing asymmetric information and regulatory costs, the sandbox facilitates access to capital [@Cornelli2020 , p.26]. 
 

@@ -11,6 +11,10 @@ The first robo-advisor was launched by Betterment^[“Robo-Advisor”, accessed 
 
 In Switzerland, robo-advisory has seen consistent growth since 2017. Statista estimates current Assets under management^[AUM is the total market value of the investments that a person or entity manages on behalf of clients:  “Asset Under Management (AUM)”, accessed 6 May 2022, https://www.investopedia.com/terms/a/aum.asp .] (AUM) at USD 5.7 billion, and projected to hike to USD 17.5 billion by 2026.  In addition, AUM are expected to show an annual growth rate between 2022 and 2026 of 31.13% resulting in a projected total amount of USD 17.32 billion by 2026^[“Robo-advisors”, accessed 6 May 2022, https://www.statista.com/outlook/dmo/FinTech/digital-investment/robo-advisors/switzerland.]. 
 
+![Figure 5](pic-5.png "Title")
+
+WE NEED TO ADD A SENTENCE/WORD TO REFER TO FIGURE 3 IN ORDER TO ADD FOOTNOTE^[“Robo-advisors”, accessed 6 May 2022, https://www.statista.com/outlook/dmo/FinTech/digital-investment/robo-advisors/switzerland.]
+
 
 
 ## Robo-Advisory Regulation, Recent Developments
@@ -23,11 +27,16 @@ The FinSA came into force on January 1, 2020. The law primarily regulates how fi
 
 According to Art. 1 Par. 1 FinSA “this Act seeks to protect the clients of financial service providers and to establish comparable conditions for the provision of financial services by financial service providers, and thus contributes to enhancing the reputation and competitiveness of Switzerland's financial centre.”
 Thus three purposes emerge from the text of the law: 
-To protect the clients (who are all creditors, investors and policyholders to whom a financial service provider provides such services^[FG 2015 8140.])
-To establish comparable conditions for the provision of financial services. And thus create a level playing field for financial service providers^[@Vogel2020, N 19 ad art. 1 FinSA.] 
-strengthening the reputation and competitiveness of the Swiss financial center
 
-Pursuant to Art. 2 FinSA, the following are subject to this Act, regardless of their legal form: financial service providers, client advisers, and producers and providers of financial instruments. FinTechs are considered to be financial service providers in the sense of FinSA because they are natural or legal persons who provide financial services on a commercial basis in Switzerland or for clients in Switzerland (Art. 3 Let. d FinSA). The criterion of a commercial basis is satisfied if there is an independent economic activity pursued on a permanent, for-profit basis (Art. 3 Let. d FinSA). Therefore, FinSA is applicable for FinTechs, and A.I.-based robo-advisors in particular^[@Favrod2021, p. 207]. However, it is essential to be aware of the fact that “companies or units of a group which provide financial services for other companies or units of the same group are not deemed to be financial service providers within the meaning of Art. 3 Let. d FinSA” (Art. 3 Par. 4 FinSO^[Ordinance on Financial Services of June 6th, 2019 (“FinSO”; CC 950.11.)]).  FinTechs operating in asset management can be represented by the following figure: 
+1. To protect the clients (who are all creditors, investors and policyholders to whom a financial service provider provides such services^[FG 2015 8140.])
+
+2. To establish comparable conditions for the provision of financial services. And thus create a level playing field for financial service providers^[@Vogel2020, N 19 ad art. 1 FinSA.] 
+
+3. strengthening the reputation and competitiveness of the Swiss financial center
+
+Pursuant to Art. 2 FinSA, the following are subject to this Act, regardless of their legal form: financial service providers, client advisers, and producers and providers of financial instruments. FinTechs are considered to be financial service providers in the sense of FinSA because they are natural or legal persons who provide financial services on a commercial basis in Switzerland or for clients in Switzerland (Art. 3 Let. d FinSA). The criterion of a commercial basis is satisfied if there is an independent economic activity pursued on a permanent, for-profit basis (Art. 3 Let. d FinSA). Therefore, FinSA is applicable for FinTechs, and A.I.-based robo-advisors in particular^[@Favrod2021, p. 207]. However, it is essential to be aware of the fact that “companies or units of a group which provide financial services for other companies or units of the same group are not deemed to be financial service providers within the meaning of Art. 3 Let. d FinSA” (Art. 3 Par. 4 FinSO^[Ordinance on Financial Services of June 6th, 2019 (“FinSO”; CC 950.11.)]). FinTechs operating in asset management can be represented by the following figure: 
+
+![Figure 6](pic-6.png "Title")
 
 Therefore, robo-advisors are considered to be financial service providers since they provide portfolio management services or, more rarely, investment advice^[@Hirsch2022, p.35.]. 
 
@@ -45,7 +54,7 @@ The application of the FinSA does not require the FinTech company to obtain an a
 
 Par. 7 of this provision provides for the possibility for financial service providers to waive the segmentation if they treat all their clients as retail clients.
 
-The segmentation system provided for in Art. 4 FinSA is not fixed^[@Favrod2021, p. 210]. Indeed, under certain conditions provided for in Art. 5 FinSA, clients can change their status.
+The segmentation system provided for in Art. 4 FinSA is not fixed^[@Favrod2021 , p. 210]. Indeed, under certain conditions provided for in Art. 5 FinSA, clients can change their status.
 
 **Information Duties**, Art. 8 and 9 FinSA; Art. 6 et seq. FinSO. The service provider must comply with an information obligation. According to Art. 8 FinSA, the company must inform the client about itself and its financial services as well as about the associated risks. In particular, based on Art. 7 Par. 1 Let. a FinSO, the robo-advisor also has a duty to actively inform the customer about how robo-advisors work and  the client must be informed about the objectives, the risks and the benefits of the robo-advisor. Likewise, in accordance with the same Article, the client must know that the investment decisions are based on algorithms that use the information provided by the client in the questionnaire during the onboarding process.			
 Following the recommendation of @Hirsch2022, it is also certainly advisable that robo-advisors inform their clients that under certain conditions human intervention would be possible, for rebalancing the individual positions in the portfolio, such as in times of recessions and financial downturns^[@Hirsch2022, pp. 38-39.]. If robo-advisors use not only traditional algorithms but also machine learning, @Hirsch2022 believes that the client should be informed about this as well^[@Hirsch2022, p.38.] 
@@ -80,7 +89,7 @@ Pursuant to art. 2 Par. 1 FinIA, the law regulates 5 types of financial institut
 
 Therefore, to examine the application of the FinIA for Fintech operating in asset management as a commercial operation, it is necessary to distinguish between portfolio management and investment advice. Indeed, only the portfolio managers are subject to the FinIA (Art. 12 Par. 1 Let. a FinIA)^[@Hirsch2022, p.36.]^[@Favrod2021, pp. 185-186.]. This way, FinTechs operating in asset management can be represented by the following figure: 
 
-FIGURE?
+![Figure 7](pic-7.png "Title")
 
 If FinTech operates a robo advisor that directly makes an investment decision resulting from the advice given by the algorithm, it is considered to be an asset manager within the meaning of Art. 17 FinIA. In this case the law applies if the FinTech acts in a professional way and not in a private way (see Art. 19 Par. 1 OEFin), which is generally the case ^[@Favrod2021, pp. 185-186.].
 
