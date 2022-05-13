@@ -11,6 +11,7 @@ link-citations: yes
 
 * **Word count: XX ** 
 
+
 FinTech is a portmanteau for the words “Financial” and “Technology” and is used to describe “technology-based solutions for innovative digital products, services and processes in the financial sector”^[“FinTech in Switzerland : Fewer companies, more volume”, accessed 27 April 2022, https://www.hslu.ch/en/lucerne-university-of-applied-sciences-and-arts/about-us/media/medienmitteilungen/2022/03/09/FinTech-studie-2022/.]. FinTech companies usually distinguish themselves from traditional financial institutions by taking technologically innovative approaches to complement or replace financial services. 
 
 Switzerland is particularly well developed in the financial industry and has earned the reputation of being a trustworthy and innovative financial hub. Together with a technology-neutral^[@Fluhmann2021, p. 285] and innovation-friendly regulatory approach, it has created a fertile ground for a world-class FinTech centre to develop. In fact, Zurich and Geneva currently rank as the second and fourth FinTech hubs in the world^[@Ankenbrand2022
