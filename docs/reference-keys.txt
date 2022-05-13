@@ -24,6 +24,7 @@ the-blockchain-act
 fintech-regulation-in-the-u.k.
 fintechs-in-the-united-kingdom
 regulatory-landscape
+corporate-taxation
 sandbox-regime
 voices-from-the-industry
 descartes-finance-ag
