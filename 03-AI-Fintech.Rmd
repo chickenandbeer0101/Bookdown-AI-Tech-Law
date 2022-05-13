@@ -11,7 +11,8 @@ The first robo-advisor was launched by Betterment^[“Robo-Advisor”, accessed 
 
 In Switzerland, robo-advisory has seen consistent growth since 2017. Statista estimates current Assets under management^[AUM is the total market value of the investments that a person or entity manages on behalf of clients:  “Asset Under Management (AUM)”, accessed 6 May 2022, https://www.investopedia.com/terms/a/aum.asp .] (AUM) at USD 5.7 billion, and projected to hike to USD 17.5 billion by 2026.  In addition, AUM are expected to show an annual growth rate between 2022 and 2026 of 31.13% resulting in a projected total amount of USD 17.32 billion by 2026^[“Robo-advisors”, accessed 6 May 2022, https://www.statista.com/outlook/dmo/FinTech/digital-investment/robo-advisors/switzerland.]. 
 
-![Figure 5](pic-5.png "Title")
+![Figure 5](pic-5.png "Title"){width=70%}
+
 *Figure 5*^[Source: “Robo-advisors”, accessed 6 May 2022, https://www.statista.com/outlook/dmo/FinTech/digital-investment/robo-advisors/switzerland.]
 
 
@@ -35,7 +36,7 @@ Thus three purposes emerge from the text of the law:
 
 Pursuant to Art. 2 FinSA, the following are subject to this Act, regardless of their legal form: financial service providers, client advisers, and producers and providers of financial instruments. FinTechs are considered to be financial service providers in the sense of FinSA because they are natural or legal persons who provide financial services on a commercial basis in Switzerland or for clients in Switzerland (Art. 3 Let. d FinSA). The criterion of a commercial basis is satisfied if there is an independent economic activity pursued on a permanent, for-profit basis (Art. 3 Let. d FinSA). Therefore, FinSA is applicable for FinTechs, and A.I.-based robo-advisors in particular^[@Favrod2021 , p. 207]. However, it is essential to be aware of the fact that “companies or units of a group which provide financial services for other companies or units of the same group are not deemed to be financial service providers within the meaning of Art. 3 Let. d FinSA” (Art. 3 Par. 4 FinSO^[Ordinance on Financial Services of June 6th, 2019 (“FinSO”; CC 950.11.)]). FinTechs operating in asset management can be represented by the following figure: 
 
-![](pic-6.png "Title")
+![](pic-6.png "Title"){width=60%}
 
 *Figure 6*^[Source: own illustration]
 
@@ -91,7 +92,7 @@ Pursuant to art. 2 Par. 1 FinIA, the law regulates 5 types of financial institut
 
 Therefore, to examine the application of the FinIA for Fintech operating in asset management as a commercial operation, it is necessary to distinguish between portfolio management and investment advice. Indeed, only the portfolio managers are subject to the FinIA (Art. 12 Par. 1 Let. a FinIA)^[@Hirsch2022, p.36.; @Favrod2021 , pp. 185-186.]. This way, FinTechs operating in asset management can be represented by the following figure: 
 
-![](pic-7.png "Title")
+![](pic-7.png "Title"){width=60%}
 
 *Figure 7*^[Source: own illustration]
 

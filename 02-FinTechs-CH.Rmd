@@ -13,7 +13,7 @@ FinTechs are notoriously hard to number, due to the blurred lines there may be b
 
 Colloquially, FinTechs may be defined as companies that apply innovative technology in the delivery of financial services^[@Favrod2021 , p. 93-94.]. As such, they can be classified based on these two criteria; their technology in use and service delivered^[@Ankenbrand2022 , p. 4.].
 
-![](pic-1.png "Title") 
+![](pic-1.png "Title"){width=40%}
 
 *Figure 1*^[Source: @Ankenbrand2022]
 
@@ -25,7 +25,7 @@ In terms of technology area, FinTechs may be broken down into process automatiza
 
 By product area, the market may be broken down into the payment, investment management, deposit and lending, and banking infrastructure categories. None of these categories are perfectly hermetic. According to this study, investment management is the most important segment amounting to 40% of the total FinTechs^[@Ankenbrand2022 , p. 7.]. 
 
-![](pic-2.png "Title") 
+![](pic-2.png "Title"){width=90%}
 
 *Figure 2*^[@Ankenbrand2022]
 
@@ -104,7 +104,7 @@ c. depositors are informed, before making the deposit, that the person accepting
 
 Under a new banking licence category also called “Banking License Light”, FINMA may authorise companies that are not traditional banking companies to “accept deposits from the public up to a maximum threshold of CHF 100 million as long as deposits are not invested and no interest is paid on them”^[“FinTech licence“, accessed 3 May 2022, https://www.finma.ch/en/authorisation/FinTech/FinTech-bewilligung/.]. This new category alleviates a number of requirements around minimum capital, capital adequacy and liquidity, governance, and risk management with the aim of promoting innovation. 
 
-![](pic-3.png "Title") 
+![](pic-3.png "Title"){width=70%}
 
 *Figure 3*^[Source: “The Swiss FinTech license”, accessed 4 May 2022,  https://www.pwc.ch/en/publications/2020/The%20swiss%20FinTech%20license_EN_web.pdf.]
 
@@ -118,6 +118,6 @@ Further, start-ups who decide to locate their tax domicile in “structurally le
 
 Zug, the second most popular canton to set up operation for FinTechs levies en 11.9% rate on corporate taxes and a 0.07% tax rate on capital gains^[“Corporate Tax Rates and Tax Rates for Individuals for 2020 in the Cantons Zug, Lucerne, Zurich, and Schwyz”, accessed 3 May 2022, https://www.reichlinhess.ch/en/2020/02/14/corporate-tax-rates-and-tax-rates-for-individuals-for-2020-in-the-cantons-zug-lucerne-zurich-and-schwyz/.]. 
 
-![](pic-4.png "Title")
+![](pic-4.png "Title"){width=90%}
 
 *Figure 4*^[@Ankenbrand2022 , p. 9.]

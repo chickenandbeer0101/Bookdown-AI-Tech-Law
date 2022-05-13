@@ -1,6 +1,6 @@
 --- 
 title: "Consequences of Recent Legal Developments on FinTech Innovation in Switzerland: A Robo-Advisory Case Study"
-author: "Line Hasler, Jessica Rye, Yaejin Kim, Philipp Pag"
+author: "Line Hasler, Jessica Rey, Yaejin Kim, Philipp Pag"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 bibliography: library.bib

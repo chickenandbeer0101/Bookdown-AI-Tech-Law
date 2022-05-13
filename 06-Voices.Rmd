@@ -4,7 +4,7 @@ In this section, we relay some of the main lessons learned when interviewing act
 ## Descartes Finance AG
 *Dr. Adriano Lucatelli is the CEO and co-founder of the digital-only asset management firm Descartes Finance AG, a leading robo-advisory firm in Switzerland. This firm belongs to the business area of Investment Management and is A.I.-based. View the full interview [here](https://vimeo.com/709262711)*
 
-> "Regulation should primarily try to prevent macroeconomic financial shocks, not regulate every single process in the financial industry."
+> *"Regulation should primarily try to prevent macroeconomic financial shocks, not regulate every single process in the financial industry."*
 >
 > -- Dr. Adriano Lucatelli
 
